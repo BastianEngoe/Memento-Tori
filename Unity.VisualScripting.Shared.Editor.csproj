@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{1c4a74e4-1535-9db1-cfd0-9b0d7eaf5dd8}</ProjectGuid>
+    <ProjectGuid>{2dc94e39-a033-5edf-94e1-bf82aa46adf8}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -391,37 +391,58 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2023.2.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\UnityEditor.Android.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.ext.nunit@2.0.5\net40\unity-custom\nunit.framework.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.ext.nunit@2.0.5\net40\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="log4netPlastic">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.IonicZip">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="xAPIModel">
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\es.e-ucm.xasu@46102fe7ec\Runtime\Plugins\xAPIModel.dll</HintPath>
+    </Reference>
+    <Reference Include="xAPIClient">
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\es.e-ucm.xasu@46102fe7ec\Runtime\Plugins\xAPIClient.dll</HintPath>
+    </Reference>
+    <Reference Include="WixSharp.Msi">
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\es.e-ucm.xasu@46102fe7ec\Editor\Plugins\WixSharp.Msi.dll</HintPath>
+    </Reference>
+    <Reference Include="Polly">
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\es.e-ucm.xasu@46102fe7ec\Runtime\Plugins\Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Deployment.WindowsInstaller">
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\es.e-ucm.xasu@46102fe7ec\Editor\Plugins\Microsoft.Deployment.WindowsInstaller.dll</HintPath>
+    </Reference>
+    <Reference Include="WixSharp">
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\es.e-ucm.xasu@46102fe7ec\Editor\Plugins\WixSharp.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2023.2.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -805,43 +826,43 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2023.2.5f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.VisualScripting.Core.Editor.csproj">
-      <Project>{445296b3-185f-1123-21ab-955916c8cc93}</Project>
+      <Project>{176e716d-2535-2d3a-f2eb-fdc3b78c6729}</Project>
       <Name>Unity.VisualScripting.Core.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj">
-      <Project>{5a2e5e78-4034-01e6-c10b-2ac2bca22dec}</Project>
+      <Project>{39f45b88-cd39-8879-5062-3cc5616e5ead}</Project>
       <Name>Unity.VisualScripting.Flow.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj">
-      <Project>{c19bab4d-4955-e0ca-24a0-794a2c38c712}</Project>
+      <Project>{61c9c869-18d8-f077-2f1b-4e45ed9e7cb5}</Project>
       <Name>Unity.VisualScripting.State.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Core.csproj">
-      <Project>{30979730-8820-d2a5-3b64-f5d4d67eb3f3}</Project>
+      <Project>{2285cda1-c7b4-518b-be81-5dc2be21e8f9}</Project>
       <Name>Unity.VisualScripting.Core</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
-      <Project>{afd86471-ffe1-6159-c943-5047903341c9}</Project>
+      <Project>{20e737b3-7db9-2104-d6b8-92e907794c7f}</Project>
       <Name>Unity.VisualScripting.Flow</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.csproj">
-      <Project>{a2f3bfdf-005c-ba0c-926a-18eaeb246db9}</Project>
+      <Project>{7bcd8f1a-c4ba-afcd-9a37-b3589fbe9142}</Project>
       <Name>Unity.VisualScripting.State</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{922e14bc-4c92-9eda-a105-a08cb9154535}</Project>
+      <Project>{009bdc9d-47c1-2a63-bc61-480bb40b969e}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{05df161f-a27c-7cdb-1aba-16d83a562072}</Project>
+      <Project>{47660df0-0365-f3a5-87fe-018c2eb03258}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>

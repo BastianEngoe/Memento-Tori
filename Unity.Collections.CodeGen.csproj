@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{1afeb5bd-e572-c8f9-dc7c-bd7d2ddd2875}</ProjectGuid>
+    <ProjectGuid>{32343ee3-b46d-db10-9849-aae2c5dd6872}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -394,16 +394,16 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2023.2.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\UnityEditor.Android.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.ext.nunit@2.0.5\net40\unity-custom\nunit.framework.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.ext.nunit@2.0.5\net40\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil.Rocks">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.Rocks.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil.Pdb">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.Pdb.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2023.2.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -792,11 +792,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Burst.csproj">
-      <Project>{aac1f121-508b-135e-3f2d-ff591a68460c}</Project>
+      <Project>{29c37a29-af57-d391-257e-be1e9a7f113a}</Project>
       <Name>Unity.Burst</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Collections.csproj">
-      <Project>{661b1dac-bd86-a460-1083-8e83884d434a}</Project>
+      <Project>{91d71cba-600b-a42a-8200-7dd96b842374}</Project>
       <Name>Unity.Collections</Name>
     </ProjectReference>
   </ItemGroup>

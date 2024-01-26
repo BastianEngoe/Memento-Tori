@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{aac1f121-508b-135e-3f2d-ff591a68460c}</ProjectGuid>
+    <ProjectGuid>{29c37a29-af57-d391-257e-be1e9a7f113a}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -47,55 +47,55 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\BurstRuntime.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Bmi2.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Fma.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\Arm\NEON_AArch64.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Editor\BurstAssemblyDisable.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Editor\BurstEditorOptions.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\BurstCompiler.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Sse2.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\FunctionPointer.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\Arm\NEON_ctor.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\f16.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Editor\BurstReflection.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\CompilerServices\IgnoreWarningAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\v64.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\SimdDebugViews.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\BurstString.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\BurstCompilerOptions.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\Arm\NEON_AArch64_crypto.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\v128.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\CompilerServices\SPMD.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Bmi1.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Sse.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\Arm\NEON_AArch64_fp16.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\BurstCompileAttribute.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\CompilerServices\Constant.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Avx2.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\Arm\NEON_AArch64_rdma.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\Arm\NEON_AArch64_dotprod.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Editor\BurstLoader.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\Arm\NEON.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\CompilerServices\Loop.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\F16C.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\CompilerServices\Aliasing.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Sse4_2.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\Common.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Bmi2.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\Arm\NEON_AArch64.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Editor\BurstAssemblyDisable.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\BurstCompiler.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\Arm\NEON_ctor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\BurstCompilerOptions.cs" />
+    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\CompilerServices\SPMD.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Avx.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\CompilerServices\Hint.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\CompilerServices\AssumeRangeAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\BurstExecutionEnvironment.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Sse.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\Arm\NEON_AArch64_fp16.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\BurstCompileAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\BurstString.Float.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\DiagnosticId.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\CompilerServices\Constant.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Avx2.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\Arm\NEON_AArch64_rdma.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Popcnt.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\Arm\NEON_AArch64_dotprod.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Csr.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Sse4_1.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\NoAliasAttribute.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Editor\BurstLoader.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\Arm\NEON.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\CompilerServices\Loop.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\SafeStringArrayHelper.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\CompilerServices\SkipLocalsInitAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Editor\BurstCompileTarget.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\SharedStatic.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\F16C.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\CompilerServices\Aliasing.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\v256.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Sse4_2.cs" />
-    <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\Common.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Common.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Ssse3.cs" />
     <Compile Include="Library\PackageCache\com.unity.burst@1.8.11\Runtime\Intrinsics\x86\Sse3.cs" />
@@ -441,7 +441,7 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2023.2.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\UnityEditor.Android.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Unsafe">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.burst@1.8.11\Unity.Burst.Unsafe.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.burst@1.8.11\Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2023.2.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -816,10 +816,10 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2023.2.5f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

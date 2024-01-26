@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{661b1dac-bd86-a460-1083-8e83884d434a}</ProjectGuid>
+    <ProjectGuid>{91d71cba-600b-a42a-8200-7dd96b842374}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -46,47 +46,25 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2023.2.5f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UnsafeStream.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\FixedStringFormatMethods.gen.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\FixedList.gen.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeNotBurstCompatible.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeParallelHashMapExtensions.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeStream.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\FixedStringParseMethods.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\BitField.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeText.gen.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\Deprecated.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\xxHash3.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UTF8ArrayUnsafeUtility.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\FixedStringUtils.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\DebugView.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\ListExtensions.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeArrayExtensions.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UnsafeParallelHashSetExtensions.gen.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\BurstCompatibleAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UnsafeNotBurstCompatible.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeList.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UnsafeParallelHashMap.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\xxHash3.StreamingState.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UnsafeList.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\FixedStringMethods.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\AssemblyInfo.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeParallelHashSetExtensions.gen.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\FixedString.gen.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UnsafeAtomicCounter.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UnsafeParallelHashSet.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeSort.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\Attributes.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeQueue.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\Unicode.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\HeapString.gen.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeParallelMultiHashMap.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UnsafeBitArray.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\Jobs\IJobBurstSchedulable.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\AllocatorManager.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeReference.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\FixedStringAppendMethods.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\Jobs\IJobParallelForFilter.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\FixedStringFormat.gen.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\ConcurrentMask.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\JetBrains.Annotations.cs" />
@@ -100,13 +78,35 @@
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\Jobs\IJobParallelForBatch.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeBitArray.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\Jobs\EarlyInitHelpers.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\Jobs\IJobParallelForDefer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UnsafeStream.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\FixedStringFormatMethods.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeNotBurstCompatible.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeParallelHashMapExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeStream.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\Deprecated.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\xxHash3.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UTF8ArrayUnsafeUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\DebugView.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\ListExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\BurstCompatibleAttribute.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UnsafeList.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeParallelHashSetExtensions.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UnsafeAtomicCounter.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UnsafeParallelHashSet.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeQueue.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\HeapString.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeParallelMultiHashMap.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\Jobs\IJobBurstSchedulable.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeReference.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\FixedStringAppendMethods.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\Jobs\IJobParallelForFilter.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UnsafeUtilityEx.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UnsafeAppendBuffer.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\RewindableAllocator.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\Jobs\RegisterGenericJobTypeAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeParallelHashMap.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\FixedStringInternalMethods.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\Jobs\IJobParallelForDefer.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UnsafeParallelMultiHashMap.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\UnsafeText.cs" />
     <None Include="Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections\NativeText.tt" />
@@ -458,37 +458,58 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2023.2.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\UnityEditor.Android.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.ext.nunit@2.0.5\net40\unity-custom\nunit.framework.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.ext.nunit@2.0.5\net40\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="log4netPlastic">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.IonicZip">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="xAPIModel">
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\es.e-ucm.xasu@46102fe7ec\Runtime\Plugins\xAPIModel.dll</HintPath>
+    </Reference>
+    <Reference Include="xAPIClient">
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\es.e-ucm.xasu@46102fe7ec\Runtime\Plugins\xAPIClient.dll</HintPath>
+    </Reference>
+    <Reference Include="WixSharp.Msi">
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\es.e-ucm.xasu@46102fe7ec\Editor\Plugins\WixSharp.Msi.dll</HintPath>
+    </Reference>
+    <Reference Include="Polly">
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\es.e-ucm.xasu@46102fe7ec\Runtime\Plugins\Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Deployment.WindowsInstaller">
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\es.e-ucm.xasu@46102fe7ec\Editor\Plugins\Microsoft.Deployment.WindowsInstaller.dll</HintPath>
+    </Reference>
+    <Reference Include="WixSharp">
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\PackageCache\es.e-ucm.xasu@46102fe7ec\Editor\Plugins\WixSharp.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2023.2.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -863,19 +884,19 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2023.2.5f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Burst.csproj">
-      <Project>{aac1f121-508b-135e-3f2d-ff591a68460c}</Project>
+      <Project>{29c37a29-af57-d391-257e-be1e9a7f113a}</Project>
       <Name>Unity.Burst</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.csproj">
-      <Project>{d341ec14-245f-db87-8b6c-207194ce8ac4}</Project>
+      <Project>{0632120a-00f3-ba61-9643-524ed3095d98}</Project>
       <Name>Unity.Mathematics</Name>
     </ProjectReference>
   </ItemGroup>
