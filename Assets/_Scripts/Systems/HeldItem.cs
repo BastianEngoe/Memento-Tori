@@ -1,11 +1,11 @@
 using DG.Tweening;
 using UnityEngine;
+using System.Collections.Generic;
 
 /// <summary>
 /// TO (potentially) DO:
-/// 
-/// If there are two potential items nearby to be pickup, make it choose one based on distance.
-/// Might require a light overhaul of this system.
+///
+/// Item outline on potentialPickups[0].
 /// </summary>
 
 public class HeldItem : MonoBehaviour
@@ -14,7 +14,7 @@ public class HeldItem : MonoBehaviour
     
     [SerializeField] private bool holdingItem = false;
     public GameObject heldItem;
-    private GameObject potentialPickup;
+    public List<GameObject> potentialPickups;
     public bool canPickup = true;
 
     private void Awake()
@@ -59,9 +59,12 @@ public class HeldItem : MonoBehaviour
         holdingItem = true;
 
         //If the currently held item is the same one we stored as potential pickup, reset potential pickup.
-        if (heldItem == potentialPickup)
+        for (int i = 0; i < potentialPickups.Count; i++)
         {
-            potentialPickup = null;
+            if (heldItem == potentialPickups[i])
+            {
+                potentialPickups.Remove(potentialPickups[i]);
+            }
         }
     }
 
@@ -89,7 +92,7 @@ public class HeldItem : MonoBehaviour
         //If we are near an item that can be picked up, set it as potential pickup target.
         if (other.CompareTag("PickUp"))
         {
-            potentialPickup = other.gameObject;
+            potentialPickups.Add(other.gameObject);
         }
     }
 
@@ -98,7 +101,7 @@ public class HeldItem : MonoBehaviour
         //If far away from potential item to pickup, remove it as a pickup target.
         if (other.CompareTag("PickUp"))
         {
-            potentialPickup = null;
+            potentialPickups.Remove(other.gameObject);
         }
     }
     
@@ -107,7 +110,7 @@ public class HeldItem : MonoBehaviour
         //Pick up the potential pick up target.
         if (Input.GetKeyUp(KeyCode.E))
         {
-            if(potentialPickup) {PickupItem(potentialPickup);}
+            if(potentialPickups.Count >= 1) {PickupItem(potentialPickups[0]);}
         }
         
         //Drop currently held item.
