@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     private CharacterController playerCharController;
     private FirstPersonController playerFPSController;
 
+    private bool canPause, isPaused;
+
     private void Awake()
     {
         //Set the GM instance to this script so we can reference it easily from any other script.
@@ -19,18 +21,43 @@ public class GameManager : MonoBehaviour
         playerCharController = player.GetComponent<CharacterController>();
         playerFPSController = player.GetComponent<FirstPersonController>();
     }
-    
+
+    private void Update()
+    {
+        //Simple pause function
+        if (canPause)
+        {
+            if (Input.GetKeyUp(KeyCode.Escape))
+            {
+                isPaused = !isPaused;
+                Debug.Log("Paused " + isPaused);
+            }
+
+            if (isPaused)
+            {
+                Time.timeScale = 0f;
+                playerFPSController.RotationSpeed = 0f;
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                playerFPSController.RotationSpeed = 1f;
+            }
+        }
+    }
+
     public void ToggleMovement(bool canMove)
     {
         //Easy to use function to toggle all movement, can be referenced from any script.
-        playerCharController.enabled = canMove;
-        if (canMove == false)
+        if (!canMove)
         {
-            playerFPSController.RotationSpeed = 0f;
+            playerFPSController.enabled = false;
+            HeldItem.instance.canPickup = false;
         }
         else
         {
-            playerFPSController.RotationSpeed = 1f;
+            playerFPSController.enabled = true;
+            HeldItem.instance.canPickup = true;
         }
     }
 }

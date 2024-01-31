@@ -6,19 +6,26 @@ using UnityEngine;
 /// 
 /// If there are two potential items nearby to be pickup, make it choose one based on distance.
 /// Might require a light overhaul of this system.
-///
-/// BUG:
-/// If there are two items nearby, you can initiate pick-up while picking up.
 /// </summary>
 
 public class HeldItem : MonoBehaviour
 {
+    public static HeldItem instance;
+    
     [SerializeField] private bool holdingItem = false;
     public GameObject heldItem;
     private GameObject potentialPickup;
-    
+    public bool canPickup = true;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public void PickupItem(GameObject item)
     {
+        if(!canPickup)  return;
+        
         //If already holding an item, drop it first.
         if (heldItem)
         {
