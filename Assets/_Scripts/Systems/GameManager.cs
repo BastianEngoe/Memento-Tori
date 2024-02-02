@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     private FirstPersonController playerFPSController;
 
     private bool canPause, isPaused;
+    public bool isNodding, isShaking;
+
+    public AudioSource mascotSpeaker;
 
     private void Awake()
     {
@@ -59,5 +62,27 @@ public class GameManager : MonoBehaviour
             playerFPSController.enabled = true;
             HeldItem.instance.canPickup = true;
         }
+    }
+
+    public void RetrievePlayerInput(out int input)
+    {
+        //Int explanation
+        //0 - No input
+        //1 - Yes
+        //2 - No
+
+        if (isNodding)
+        {
+            input = 1;
+            return;
+        }
+
+        if (isShaking)
+        {
+            input = 2;
+            return;
+        }
+
+        input = 0;
     }
 }
