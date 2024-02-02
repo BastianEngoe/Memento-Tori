@@ -48,6 +48,7 @@ public class HeldItem : MonoBehaviour
         if(heldItem.TryGetComponent(out Rigidbody itemRB))
         {
             itemRB.useGravity = false;
+            itemRB.velocity = Vector3.zero;
         }
 
         if (heldItem.TryGetComponent(out Collider itemCollider))
