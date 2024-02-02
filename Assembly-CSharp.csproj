@@ -934,6 +934,9 @@
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
       <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:\Users\Basti\Documents\GitHub\Memento Tori\Memento-Tori\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

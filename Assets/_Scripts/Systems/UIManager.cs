@@ -60,10 +60,10 @@ public class UIManager : MonoBehaviour
     void NextLine(DialogueBankScriptableObject.DialogueLine lineType)
     {
         dialogue.text = lineType.dialogue;
-        if (lineType.voiceSource)
+        if (lineType.voiceline)
         {
-            lineType.voiceSource.clip = lineType.voiceline;
-            lineType.voiceSource.Play();
+            GameManager.instance.mascotSpeaker.clip = lineType.voiceline;
+            GameManager.instance.mascotSpeaker.Play();
             lineType.duration = lineType.voiceline.length;
         }
 
