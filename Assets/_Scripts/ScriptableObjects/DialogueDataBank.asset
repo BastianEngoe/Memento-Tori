@@ -16,13 +16,23 @@ MonoBehaviour:
   - dialogue: 
     voiceline: {fileID: 0}
     duration: 3
-    triggerEvent: 1
+    triggerEvent: 0
   - dialogue: "Oh, hold on, we\u2019re not quite ready yet. By we I mean me. Hi!
       We\u2019ll be introduced in a second, just let me\u2026"
     voiceline: {fileID: 0}
     duration: 3
-    triggerEvent: 0
-  - dialogue: There we go! No, wait, that looks boring. Hold on
+    triggerEvent: 1
+  - dialogue: There we go! No, wait, that looks boring. Hold on.
+    voiceline: {fileID: 0}
+    duration: 3
+    triggerEvent: 1
+  - dialogue: "That\u2019s it. Looks nice, huh? I made it myself. Okay, okay, check
+      this out. This is my favorite part. Drum roll please."
+    voiceline: {fileID: 0}
+    duration: 3
+    triggerEvent: 1
+  - dialogue: "Hello! Hi, hi, hello! It\u2019s me! My name is [name], and I\u2019m
+      an aspiring game developer. Do you like video games?"
     voiceline: {fileID: 0}
     duration: 3
     triggerEvent: 1
