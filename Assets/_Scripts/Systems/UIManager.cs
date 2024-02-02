@@ -57,13 +57,14 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    void NextLine(DialogueBankScriptableObject.DialogueLine lineType, AudioSource audioSource)
+    void NextLine(DialogueBankScriptableObject.DialogueLine lineType)
     {
         dialogue.text = lineType.dialogue;
-        if (audioSource)
+        if (lineType.voiceSource)
         {
-            audioSource.clip = lineType.voiceline;
-            audioSource.Play();
+            lineType.voiceSource.clip = lineType.voiceline;
+            lineType.voiceSource.Play();
+            lineType.duration = lineType.voiceline.length;
         }
 
         if (lineType.triggerEvent)
@@ -88,7 +89,11 @@ public class UIManager : MonoBehaviour
 
         if (elapsedTime >= dialogueBank.introLines[lineIndex].duration)
         {
-            NextLine(dialogueBank.introLines[lineIndex], null);
+            if (!dialogueBank.introLines[lineIndex].condition)
+            {
+                return;
+            }
+            NextLine(dialogueBank.introLines[lineIndex]);
             lineIndex++;
             elapsedTime = 0f;
         }
@@ -100,15 +105,10 @@ public class UIManager : MonoBehaviour
         {
             return;
         }
-        
-        if (dialogueBank.farmLines[lineIndex].duration == 0)
-        {
-            dialogueBank.farmLines[lineIndex].duration = 3f;
-        }
 
         if (elapsedTime >= dialogueBank.farmLines[lineIndex].duration)
         {
-            NextLine(dialogueBank.farmLines[lineIndex], null);
+            NextLine(dialogueBank.farmLines[lineIndex]);
             lineIndex++;
             elapsedTime = 0f;
         }
@@ -121,14 +121,9 @@ public class UIManager : MonoBehaviour
             return;
         }
         
-        if (dialogueBank.raceLines[lineIndex].duration == 0)
-        {
-            dialogueBank.raceLines[lineIndex].duration = 3f;
-        }
-
         if (elapsedTime >= dialogueBank.raceLines[lineIndex].duration)
         {
-            NextLine(dialogueBank.raceLines[lineIndex], null);
+            NextLine(dialogueBank.raceLines[lineIndex]);
             lineIndex++;
             elapsedTime = 0f;
         }
@@ -148,7 +143,7 @@ public class UIManager : MonoBehaviour
 
         if (elapsedTime >= dialogueBank.blockLines[lineIndex].duration)
         {
-            NextLine(dialogueBank.blockLines[lineIndex], null);
+            NextLine(dialogueBank.blockLines[lineIndex]);
             lineIndex++;
             elapsedTime = 0f;
         }
@@ -168,7 +163,7 @@ public class UIManager : MonoBehaviour
 
         if (elapsedTime >= dialogueBank.shooterLines[lineIndex].duration)
         {
-            NextLine(dialogueBank.shooterLines[lineIndex], null);
+            NextLine(dialogueBank.shooterLines[lineIndex]);
             lineIndex++;
             elapsedTime = 0f;
         }

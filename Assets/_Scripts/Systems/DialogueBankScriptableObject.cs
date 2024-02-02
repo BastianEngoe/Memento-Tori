@@ -10,9 +10,11 @@ public class DialogueBankScriptableObject : ScriptableObject
     public class DialogueLine
     {
         public string dialogue;
+        public AudioSource voiceSource;
         public AudioClip voiceline;
-        public float duration;
+        public float duration = 3f;
         public bool triggerEvent;
+        public bool condition = true;
     }
     
     public List<DialogueLine> introLines;
