@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
 
     public void RetrievePlayerInput(out int input)
     {
-        //Int explanation
+        //int explanation
         //0 - No input
         //1 - Yes
         //2 - No

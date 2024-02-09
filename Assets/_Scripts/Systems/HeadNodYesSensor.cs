@@ -34,6 +34,7 @@ public class HeadNodYesSensor : MonoBehaviour
 		// time out
 		if (NodInProgress > 0)
 		{
+
 			NodInProgress -= Time.deltaTime;
 			if (NodInProgress <= 0)
 			{
@@ -82,11 +83,8 @@ public class HeadNodYesSensor : MonoBehaviour
 				{
 					NodCount = 0;
 
-					// TODO: perhaps inhibit sensing for a second or so?
-
-					Debug.Log( "Yuuuup!");
-
-					if (AudioYes) AudioYes.Play();
+					GameManager.instance.isNodding = true;
+					Invoke("ResetNod", 1.25f);
 				}
 			}
 		}
@@ -95,5 +93,10 @@ public class HeadNodYesSensor : MonoBehaviour
 	void Update ()
 	{
 		UpdateNodYes();
+	}
+
+	void ResetNod()
+	{
+		GameManager.instance.isNodding = false;
 	}
 }

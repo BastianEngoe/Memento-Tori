@@ -82,9 +82,7 @@ public class HeadShakeNoSensor : MonoBehaviour
 				{
 					ShakeCount = 0;
 
-					// TODO: perhaps inhibit sensing for a second or so?
-
-					Debug.Log( "Nope!!");
+					GameManager.instance.isShaking = true;
 
 					if (AudioNo) AudioNo.Play();
 				}
@@ -95,5 +93,10 @@ public class HeadShakeNoSensor : MonoBehaviour
 	void Update ()
 	{
 		UpdateShakeNo();
+	}
+
+	void ResetShake()
+	{
+		
 	}
 }
