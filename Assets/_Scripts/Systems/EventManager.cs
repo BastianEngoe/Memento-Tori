@@ -22,7 +22,7 @@ public class EventManager : MonoBehaviour
 
     public void TriggerEvent(DialogueBankScriptableObject.DialogueLine eventType, int index)
     {
-        Debug.Log("Received event type " + eventType);
+        //Debug.Log("Received event type " + eventType);
 
         if (UIManager.instance.curRoom == UIManager.Rooms.INTRO)
         {
