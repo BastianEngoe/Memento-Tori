@@ -31,6 +31,11 @@ namespace StarterAssets
 			if(cursorInputForLook)
 			{
 				LookInput(value.Get<Vector2>());
+
+				if (Time.timeScale <= 0)
+				{
+					LookInput(new Vector2(0,0));
+				}
 			}
 		}
 
@@ -68,7 +73,7 @@ namespace StarterAssets
 		
 		private void OnApplicationFocus(bool hasFocus)
 		{
-			SetCursorState(cursorLocked);
+			//SetCursorState(cursorLocked);
 		}
 
 		private void SetCursorState(bool newState)
