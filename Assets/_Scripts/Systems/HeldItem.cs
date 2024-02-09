@@ -1,6 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 /// <summary>
 /// TO (potentially) DO:
@@ -17,6 +18,10 @@ public class HeldItem : MonoBehaviour
     public List<GameObject> potentialPickups;
     public bool canPickup = true;
 
+    [SerializeField] private Material outlineShader;
+    [SerializeField] private Material[] matArray;
+    [SerializeField] private List<Material> matArray2;
+
     private void Awake()
     {
         instance = this;
@@ -24,6 +29,7 @@ public class HeldItem : MonoBehaviour
 
     public void PickupItem(GameObject item)
     {
+        
         if(!canPickup)  return;
         
         //If already holding an item, drop it first.
@@ -37,6 +43,17 @@ public class HeldItem : MonoBehaviour
         
         //Assign found item as currently held item.
         heldItem = item;
+        
+        if (heldItem.GetComponent<MeshRenderer>().materials.Length == 2)
+        {
+            matArray2 = matArray.ToList();
+            
+            matArray2.Remove(matArray2[1]);
+
+            matArray = matArray2.ToArray();
+
+            heldItem.GetComponent<MeshRenderer>().materials = matArray;
+        }
 
         //Move the item in place, re-enable movement and set items transform parent.
         heldItem.transform.DOMove(transform.position, 0.75f).OnComplete
@@ -94,6 +111,21 @@ public class HeldItem : MonoBehaviour
         if (other.CompareTag("PickUp"))
         {
             potentialPickups.Add(other.gameObject);
+
+            matArray = potentialPickups[0].GetComponent<MeshRenderer>().materials;
+
+            matArray2 = matArray.ToList();
+            
+            if (matArray2.Count == 1)
+            {
+                matArray2.Add(outlineShader);
+
+                matArray = matArray2.ToArray();
+
+                potentialPickups[0].GetComponent<MeshRenderer>().materials = matArray;
+            }
+
+            potentialPickups[0].GetComponent<MeshRenderer>().materials = matArray;
         }
     }
 
@@ -102,6 +134,19 @@ public class HeldItem : MonoBehaviour
         //If far away from potential item to pickup, remove it as a pickup target.
         if (other.CompareTag("PickUp"))
         {
+            matArray = potentialPickups[0].GetComponent<MeshRenderer>().materials;
+
+            matArray2 = matArray.ToList();
+
+            if (matArray2.Count == 2)
+            {
+                matArray2.Remove(matArray2[1]);
+
+                matArray = matArray2.ToArray();
+
+                potentialPickups[0].GetComponent<MeshRenderer>().materials = matArray;
+            }
+            
             potentialPickups.Remove(other.gameObject);
         }
     }
@@ -115,7 +160,7 @@ public class HeldItem : MonoBehaviour
         }
         
         //Drop currently held item.
-        if (Input.GetKeyUp(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (holdingItem)
             {

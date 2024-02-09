@@ -2416,6 +2416,11 @@ PrefabInstance:
       propertyPath: outlineMat
       value: 
       objectReference: {fileID: 2100000, guid: 067e6afd27234cb49ad3e022a63361f7, type: 2}
+    - target: {fileID: 142849238570019242, guid: d21185c80ca8eff4f89fd8b2a9996362,
+        type: 3}
+      propertyPath: outlineShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ea0b1d35a098bf4793e7039a2258ad7, type: 2}
     - target: {fileID: 391081270243083047, guid: d21185c80ca8eff4f89fd8b2a9996362,
         type: 3}
       propertyPath: m_LocalPosition.x
