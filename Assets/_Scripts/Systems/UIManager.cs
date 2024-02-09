@@ -96,6 +96,11 @@ public class UIManager : MonoBehaviour
             EventManager.instance.TriggerEvent(lineType, eventIndex);
             eventIndex++;
         }
+
+        if (!lineType.condition)
+        {
+            InvokeRepeating("CheckForCondition", 0f, 0.25f);
+        }
     }
 
     private void UpdateIntroRoom()
@@ -191,8 +196,7 @@ public class UIManager : MonoBehaviour
             elapsedTime = 0f;
         }
     }
-    
-    
+
     public void PauseGame() //includes many "flip-flops" 
     {
         Time.timeScale = 1 - Time.timeScale; 
@@ -232,10 +236,27 @@ public class UIManager : MonoBehaviour
     {
         pauseAction.Disable();
     }
-    
+
 
     private void PauseKey(InputAction.CallbackContext context)
     {
         PauseGame();
+    }
+
+    public void CheckForCondition()
+    {
+        Debug.Log("Checking for condition...");
+        
+        int condition;
+        GameManager.instance.RetrievePlayerInput(out condition);
+        if (condition == 1)
+        {
+            Debug.Log("Condition Nodding");
+        }
+
+        if (condition == 2)
+        {
+            Debug.Log("Condition Shaking");
+        }
     }
 }
