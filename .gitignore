@@ -101,3 +101,5 @@ Unity.AI.Navigation.Updater.csproj
 Unity.AI.Navigation.Editor.csproj
 Unity.AI.Navigation.Editor.ConversionSystem.csproj
 Unity.AI.Navigation.csproj
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp.csproj
