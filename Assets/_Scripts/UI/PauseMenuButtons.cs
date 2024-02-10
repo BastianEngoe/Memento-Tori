@@ -13,6 +13,7 @@ public class PauseMenuButtons : MonoBehaviour
     private bool hoveringOverButton;
     private Vector2 scale1, scale2;
     private int timesLerpedButtonScale;
+    private GameObject settingsPanel;
     void Start()
     {
         pauseSymbolColor1 = new Color(1, 1, 1, 0);
@@ -54,13 +55,23 @@ public class PauseMenuButtons : MonoBehaviour
     }
 
 
-    public void QuitGame() //todo make this funny, move the quit button after the "Are you sure?"
+    public void QuitGame() // make this funny, move the quit button after the "Are you sure?"
     {
         Application.Quit();
     }
 
     public void OpenSettingsMenu()
     {
+        if (!settingsPanel)
+        {
+            settingsPanel = GameObject.Find("SettingsMenu");
+        }
+        else
+        {
+            
+        }
+        
+        
         
     }
 
