@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Audio;
 
 public class PauseMenuButtons : MonoBehaviour
 {
@@ -14,12 +17,33 @@ public class PauseMenuButtons : MonoBehaviour
     private Vector2 scale1, scale2;
     private int timesLerpedButtonScale;
     private GameObject settingsPanel;
+    private Volume _volume; // URP Volume
+
+    #region ToggleSFX variables
+    [SerializeField] private AudioMixer audioMixer; // Reference to the AudioMixer
+    private bool SFXisMuted, MusicisMuted; // Flag to track mute state of audio mixer groups
+    private float savedSFXVolume, savedMusicVolume;
+    #endregion
+    
+
+    
+    
     void Start()
     {
         pauseSymbolColor1 = new Color(1, 1, 1, 0);
         pauseSymbolColor2 = new Color(1, 1, 1, 1);
         scale1 = new Vector2(1f,1f);
         scale2 = new Vector2(1.05f,1.05f);
+        
+        
+        if (name == "SFX_Button" | name == "Music_Button") // Ensure that the audioMixer reference is set
+        {
+            if (audioMixer == null)
+            {
+                Debug.LogError("AudioMixer reference is not set in ToggleSFX script on GameObject " + gameObject.name);
+            }
+        }
+        
     }
 
     
@@ -42,12 +66,13 @@ public class PauseMenuButtons : MonoBehaviour
         if (pauseSymbolTimeElapsed < pauseSymbolLerpDuration)
         {
             GetComponent<Image>().color = Color.Lerp(pauseSymbolColor1, pauseSymbolColor2, pauseSymbolTimeElapsed / pauseSymbolLerpDuration);
+            //GetComponent<Image>().color = Color.Lerp(pauseSymbolColor1, pauseSymbolColor2, pauseSymbolTimeElapsed / pauseSymbolLerpDuration);
             pauseSymbolTimeElapsed += Time.unscaledDeltaTime;
         }
         else 
         {
             GetComponent<Image>().color = pauseSymbolColor2;
-
+            //GetComponent<Image>().color = pauseSymbolColor2;
             (pauseSymbolColor1, pauseSymbolColor2) = (pauseSymbolColor2, pauseSymbolColor1);
 
             pauseSymbolTimeElapsed = 0;
@@ -66,12 +91,21 @@ public class PauseMenuButtons : MonoBehaviour
         {
             settingsPanel = GameObject.Find("SettingsMenu");
         }
-        else
+
+        settingsPanel.GetComponent<Animator>().SetInteger("Direction", 0);
+        
+        settingsPanel.GetComponent<Animator>().SetTrigger("OpenSettings");
+
+    }
+
+    public void CloseSettingsMenu()
+    {
+        if (!settingsPanel)
         {
-            
+            settingsPanel = GameObject.Find("SettingsMenu");
         }
-        
-        
+        settingsPanel.GetComponent<Animator>().SetInteger("Direction",Random.Range(1,5));
+        settingsPanel.GetComponent<Animator>().ResetTrigger("OpenSettings");
         
     }
 
@@ -114,4 +148,33 @@ public class PauseMenuButtons : MonoBehaviour
         }
     }
 
+
+    public void ToggleSFX() // Method to toggle the mute state of the Mixer group
+    {
+        
+        if (!SFXisMuted)
+        {
+            audioMixer.GetFloat("SFXVolume", out savedSFXVolume); // Save the volume before muting, so unmuting goes back to it
+        }
+        
+        SFXisMuted = !SFXisMuted; // Toggle the mute state
+        
+        // Set the volume of the Mixer group based on the mute state
+        float volume = SFXisMuted ? -80f : savedSFXVolume; // Mute volume is typically set to -80dB
+        audioMixer.SetFloat("SFXVolume", volume); // Set the volume parameter of the Mixer group
+    }
+    
+    public void ToggleMusic()
+    {
+        if (!MusicisMuted)
+        {
+            audioMixer.GetFloat("MusicVolume", out savedMusicVolume); // Save the volume before muting, so unmuting goes back to it
+        }
+        
+        MusicisMuted = !MusicisMuted; // Toggle the mute state
+        
+        // Set the volume of the Mixer group based on the mute state
+        float volume = MusicisMuted ? -80f : savedMusicVolume; // Mute volume is typically set to -80dB
+        audioMixer.SetFloat("MusicVolume", volume); // Set the volume parameter of the Mixer group
+    }
 }

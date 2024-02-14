@@ -42,11 +42,11 @@ public class UIManager : MonoBehaviour
         
         ShowOrHidePauseMenu(false);
         
-        // if (DialogueManager.instance.curRoom == DialogueManager.Rooms.INTRO)
-        // { 
-        //     centerUIDot.GetComponent<CanvasGroup>().alpha = 1;
-        //     Cursor.lockState = CursorLockMode.Locked;
-        // }
+        if (DialogueManager.instance.curRoom == DialogueManager.Rooms.INTRO)
+        { 
+            centerUIDot.GetComponent<CanvasGroup>().alpha = 1;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     public void NextSubtitle(string subtitle)
