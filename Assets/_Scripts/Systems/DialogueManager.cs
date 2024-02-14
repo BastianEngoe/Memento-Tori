@@ -6,6 +6,7 @@ using UnityEngine;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
+    
     public enum Rooms
     {
         INTRO,
@@ -14,14 +15,18 @@ public class DialogueManager : MonoBehaviour
         BLOCK,
         SHOOTER
     }
+    
+    [Header("Room state")]
     public Rooms curRoom;
     
+    [Header("Dialogue asset")]
     [SerializeField] private DialogueBankScriptableObject dialogueBank;
-    private float elapsedTime;
-    private int lineIndex, eventIndex;
+    [SerializeField] private float elapsedTime;
+    [SerializeField] private int lineIndex, eventIndex;
 
-    private bool checkingCondition;
-    private bool performedCondition;
+    [SerializeField] private bool checkingCondition;
+    [SerializeField] private bool performedCondition;
+    [SerializeField] private bool nodded;
 
     private void Awake()
     {
@@ -59,7 +64,7 @@ public class DialogueManager : MonoBehaviour
     void NextLine(DialogueBankScriptableObject.DialogueLine lineType)
     {
         UIManager.instance.NextSubtitle(lineType.dialogue);
-        
+
         if (lineType.voiceline)
         {
             GameManager.instance.mascotSpeaker.clip = lineType.voiceline;
@@ -73,7 +78,7 @@ public class DialogueManager : MonoBehaviour
             EventManager.instance.TriggerEvent(lineType, eventIndex);
             eventIndex++;
         }
-
+        
         /*if (!lineType.condition)
         {
             InvokeRepeating("CheckForCondition", 0f, 0.25f);
@@ -92,8 +97,10 @@ public class DialogueManager : MonoBehaviour
 
             performedCondition = true;
             checkingCondition = false;
+            nodded = true;
             
             NextLine(conditionLine);
+            StopCoroutine(CheckForCondition(conditionLine));
         }
 
         if (condition == 2)
@@ -105,6 +112,7 @@ public class DialogueManager : MonoBehaviour
             checkingCondition = false;
             
             NextLine(conditionLine);
+            StopCoroutine(CheckForCondition(conditionLine));
         }
 
         yield return new WaitForSeconds(0.25f);
@@ -114,7 +122,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            StopCoroutine(CheckForCondition(conditionLine));
+            //StopCoroutine(CheckForCondition(conditionLine));
         }
     }
     
@@ -130,24 +138,25 @@ public class DialogueManager : MonoBehaviour
             dialogueBank.introLines[lineIndex].duration = 3f;
         }
 
+        if (dialogueBank.introLines[lineIndex].condition)
+        {
+            if (!checkingCondition)
+            {
+                StartCoroutine(CheckForCondition(dialogueBank.introLines[lineIndex]));
+                checkingCondition = true;
+            }
+
+            while (checkingCondition)
+            {
+                elapsedTime = 0;
+            }
+        }
+
         if (elapsedTime >= dialogueBank.introLines[lineIndex].duration)
         {
-            if (lineIndex != 0)
+            if (lineIndex > 0)
             {
-                if (dialogueBank.introLines[lineIndex - 1].condition == false)
-                {
-                    if (!checkingCondition && !performedCondition)
-                    {
-                        StartCoroutine(CheckForCondition(dialogueBank.introLines[lineIndex - 1]));
-                        checkingCondition = true;
-                    }
-                }
-                else
-                {
-                    NextLine(dialogueBank.introLines[lineIndex]);
-                    lineIndex++;
-                    elapsedTime = 0f;
-                }
+                
             }
             else
             {
@@ -157,8 +166,8 @@ public class DialogueManager : MonoBehaviour
             }
         }
     }
-    
-    private void UpdateFarmRoom()
+
+     private void UpdateFarmRoom()
     {
         if (lineIndex == dialogueBank.farmLines.Count)
         {
