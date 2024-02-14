@@ -973,6 +973,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020273082}
   m_CullTransparentMesh: 1
+--- !u!1 &1117020918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1117020920}
+  - component: {fileID: 1117020919}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1117020919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117020918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397fbcaf1268a144cb86a2097cd4091c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curRoom: 0
+  dialogueBank: {fileID: 11400000, guid: c0e6913091af3b64d97b2e6dce59655f, type: 2}
+  elapsedTime: 0
+  lineIndex: 0
+  eventIndex: 0
+  checkingCondition: 0
+  performedCondition: 0
+  nodded: 0
+--- !u!4 &1117020920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117020918}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1179164494 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1780292596475190605, guid: d21185c80ca8eff4f89fd8b2a9996362,
@@ -1477,8 +1529,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 1020273084}
-  dialogueBank: {fileID: 11400000, guid: c0e6913091af3b64d97b2e6dce59655f, type: 2}
-  curRoom: 0
   pausePanel: {fileID: 38635942}
   centerUIDot: {fileID: 1418678095}
 --- !u!23 &2021806773 stripped
@@ -1594,6 +1644,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3354403011760107097, guid: 617df2c41355c3542b697696ae0e6121,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 6582584494624798432, guid: 617df2c41355c3542b697696ae0e6121,
         type: 3}
@@ -1794,6 +1849,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 75404123}
   - {fileID: 1982960823}
+  - {fileID: 1117020920}
   - {fileID: 1392073894}
   - {fileID: 7314582675238085377}
   - {fileID: 321731659344434469}

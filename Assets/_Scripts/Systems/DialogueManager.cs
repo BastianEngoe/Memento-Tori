@@ -33,6 +33,31 @@ public class DialogueManager : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        lineIndex = 0;
+        
+        if (curRoom == Rooms.INTRO)
+        {
+            NextLine(dialogueBank.introLines[lineIndex]);
+        }
+        if (curRoom == Rooms.FARM)
+        {
+            NextLine(dialogueBank.farmLines[lineIndex]);
+        }
+        if (curRoom == Rooms.RACE)
+        {
+            NextLine(dialogueBank.raceLines[lineIndex]);
+        }
+        if (curRoom == Rooms.BLOCK)
+        {
+            NextLine(dialogueBank.blockLines[lineIndex]);
+        }
+        if (curRoom == Rooms.SHOOTER)
+        {
+            NextLine(dialogueBank.shooterLines[lineIndex]);
+        }
+    }
 
     void Update()
     {
@@ -63,6 +88,12 @@ public class DialogueManager : MonoBehaviour
     
     void NextLine(DialogueBankScriptableObject.DialogueLine lineType)
     {
+        if (nodded)
+        {
+            lineIndex++;
+            nodded = false;
+        }
+        
         UIManager.instance.NextSubtitle(lineType.dialogue);
 
         if (lineType.voiceline)
@@ -78,11 +109,6 @@ public class DialogueManager : MonoBehaviour
             EventManager.instance.TriggerEvent(lineType, eventIndex);
             eventIndex++;
         }
-        
-        /*if (!lineType.condition)
-        {
-            InvokeRepeating("CheckForCondition", 0f, 0.25f);
-        }*/
     }
     
     private IEnumerator CheckForCondition(DialogueBankScriptableObject.DialogueLine conditionLine)
@@ -98,8 +124,30 @@ public class DialogueManager : MonoBehaviour
             performedCondition = true;
             checkingCondition = false;
             nodded = true;
+
+            lineIndex++;
+
+            if (curRoom == Rooms.INTRO)
+            {
+                NextLine(dialogueBank.introLines[lineIndex]);
+            }
+            if (curRoom == Rooms.FARM)
+            {
+                NextLine(dialogueBank.farmLines[lineIndex]);
+            }
+            if (curRoom == Rooms.RACE)
+            {
+                NextLine(dialogueBank.raceLines[lineIndex]);
+            }
+            if (curRoom == Rooms.BLOCK)
+            {
+                NextLine(dialogueBank.blockLines[lineIndex]);
+            }
+            if (curRoom == Rooms.SHOOTER)
+            {
+                NextLine(dialogueBank.shooterLines[lineIndex]);
+            }
             
-            NextLine(conditionLine);
             StopCoroutine(CheckForCondition(conditionLine));
         }
 
@@ -107,11 +155,31 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.Log("Condition Shaking");
 
-            lineIndex++;
+            lineIndex += 2;
             performedCondition = true;
             checkingCondition = false;
             
-            NextLine(conditionLine);
+            if (curRoom == Rooms.INTRO)
+            {
+                NextLine(dialogueBank.introLines[lineIndex]);
+            }
+            if (curRoom == Rooms.FARM)
+            {
+                NextLine(dialogueBank.farmLines[lineIndex]);
+            }
+            if (curRoom == Rooms.RACE)
+            {
+                NextLine(dialogueBank.raceLines[lineIndex]);
+            }
+            if (curRoom == Rooms.BLOCK)
+            {
+                NextLine(dialogueBank.blockLines[lineIndex]);
+            }
+            if (curRoom == Rooms.SHOOTER)
+            {
+                NextLine(dialogueBank.shooterLines[lineIndex]);
+            }
+            
             StopCoroutine(CheckForCondition(conditionLine));
         }
 
@@ -120,15 +188,11 @@ public class DialogueManager : MonoBehaviour
         {
             StartCoroutine(CheckForCondition(conditionLine));
         }
-        else
-        {
-            //StopCoroutine(CheckForCondition(conditionLine));
-        }
     }
     
      private void UpdateIntroRoom()
     {
-        if (lineIndex == dialogueBank.introLines.Count)
+        if (lineIndex == dialogueBank.introLines.Count - 1)
         {
             return;
         }
@@ -138,15 +202,16 @@ public class DialogueManager : MonoBehaviour
             dialogueBank.introLines[lineIndex].duration = 3f;
         }
 
-        if (dialogueBank.introLines[lineIndex].condition)
+        if (dialogueBank.introLines[lineIndex].condition == false)
         {
             if (!checkingCondition)
             {
                 StartCoroutine(CheckForCondition(dialogueBank.introLines[lineIndex]));
+                performedCondition = false;
                 checkingCondition = true;
             }
 
-            while (checkingCondition)
+            if(checkingCondition)
             {
                 elapsedTime = 0;
             }
@@ -154,52 +219,85 @@ public class DialogueManager : MonoBehaviour
 
         if (elapsedTime >= dialogueBank.introLines[lineIndex].duration)
         {
-            if (lineIndex > 0)
-            {
-                
-            }
-            else
-            {
-                NextLine(dialogueBank.introLines[lineIndex]);
-                lineIndex++;
-                elapsedTime = 0f;
-            }
+            lineIndex++;
+            NextLine(dialogueBank.introLines[lineIndex]);
+            elapsedTime = 0f;
         }
     }
 
      private void UpdateFarmRoom()
     {
-        if (lineIndex == dialogueBank.farmLines.Count)
+        if (lineIndex == dialogueBank.farmLines.Count - 1)
         {
             return;
+        }
+        
+        if (dialogueBank.farmLines[lineIndex].duration == 0)
+        {
+            dialogueBank.farmLines[lineIndex].duration = 3f;
+        }
+
+        if (dialogueBank.farmLines[lineIndex].condition == false)
+        {
+            if (!checkingCondition)
+            {
+                StartCoroutine(CheckForCondition(dialogueBank.farmLines[lineIndex]));
+                performedCondition = false;
+                checkingCondition = true;
+            }
+
+            if(checkingCondition)
+            {
+                elapsedTime = 0;
+            }
         }
 
         if (elapsedTime >= dialogueBank.farmLines[lineIndex].duration)
         {
-            NextLine(dialogueBank.farmLines[lineIndex]);
             lineIndex++;
+            NextLine(dialogueBank.farmLines[lineIndex]);
             elapsedTime = 0f;
         }
     }
     
     private void UpdateRaceRoom()
     {
-        if (lineIndex == dialogueBank.raceLines.Count)
+        if (lineIndex == dialogueBank.raceLines.Count - 1)
         {
             return;
         }
         
+        if (dialogueBank.raceLines[lineIndex].duration == 0)
+        {
+            dialogueBank.raceLines[lineIndex].duration = 3f;
+        }
+
+        if (dialogueBank.raceLines[lineIndex].condition == false)
+        {
+            if (!checkingCondition)
+            {
+                StartCoroutine(CheckForCondition(dialogueBank.raceLines[lineIndex]));
+                performedCondition = false;
+                checkingCondition = true;
+            }
+
+            if(checkingCondition)
+            {
+                elapsedTime = 0;
+            }
+        }
+
         if (elapsedTime >= dialogueBank.raceLines[lineIndex].duration)
         {
-            NextLine(dialogueBank.raceLines[lineIndex]);
             lineIndex++;
+            NextLine(dialogueBank.raceLines[lineIndex]);
             elapsedTime = 0f;
         }
     }
     
     private void UpdateBlockRoom()
     {
-        if (lineIndex == dialogueBank.blockLines.Count)
+        if (lineIndex == dialogueBank.blockLines.Count - 1)
         {
             return;
         }
@@ -209,17 +307,32 @@ public class DialogueManager : MonoBehaviour
             dialogueBank.blockLines[lineIndex].duration = 3f;
         }
 
+        if (dialogueBank.blockLines[lineIndex].condition == false)
+        {
+            if (!checkingCondition)
+            {
+                StartCoroutine(CheckForCondition(dialogueBank.blockLines[lineIndex]));
+                performedCondition = false;
+                checkingCondition = true;
+            }
+
+            if(checkingCondition)
+            {
+                elapsedTime = 0;
+            }
+        }
+
         if (elapsedTime >= dialogueBank.blockLines[lineIndex].duration)
         {
-            NextLine(dialogueBank.blockLines[lineIndex]);
             lineIndex++;
+            NextLine(dialogueBank.blockLines[lineIndex]);
             elapsedTime = 0f;
         }
     }
     
     private void UpdateShooterRoom()
     {
-        if (lineIndex == dialogueBank.shooterLines.Count)
+        if (lineIndex == dialogueBank.shooterLines.Count - 1)
         {
             return;
         }
@@ -229,10 +342,25 @@ public class DialogueManager : MonoBehaviour
             dialogueBank.shooterLines[lineIndex].duration = 3f;
         }
 
+        if (dialogueBank.shooterLines[lineIndex].condition == false)
+        {
+            if (!checkingCondition)
+            {
+                StartCoroutine(CheckForCondition(dialogueBank.shooterLines[lineIndex]));
+                performedCondition = false;
+                checkingCondition = true;
+            }
+
+            if(checkingCondition)
+            {
+                elapsedTime = 0;
+            }
+        }
+
         if (elapsedTime >= dialogueBank.shooterLines[lineIndex].duration)
         {
-            NextLine(dialogueBank.shooterLines[lineIndex]);
             lineIndex++;
+            NextLine(dialogueBank.shooterLines[lineIndex]);
             elapsedTime = 0f;
         }
     }

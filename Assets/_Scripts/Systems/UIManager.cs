@@ -27,8 +27,6 @@ public class UIManager : MonoBehaviour
     
     private void Start()
     {
-       
-
         if (centerUIDot == null)
         {
             centerUIDot = GameObject.Find("CenterUIDot");
@@ -51,12 +49,14 @@ public class UIManager : MonoBehaviour
         // }
     }
 
+    public void NextSubtitle(string subtitle)
+    {
+        dialogue.text = subtitle;
+    }
+
     
     private void PauseGame(bool pause)
     {
-
-
-       
         switch (Cursor.lockState)
         {
             case CursorLockMode.Locked:
@@ -78,7 +78,7 @@ public class UIManager : MonoBehaviour
         pausePanel.GetComponent<CanvasGroup>().alpha = pause ? 1 : 0;
         pausePanel.GetComponent<CanvasGroup>().blocksRaycasts = pause;
         pausePanel.GetComponent<CanvasGroup>().interactable = pause;
-        pausePanel.GetComponent<PauseMenuButtons>().CloseSettingsMenu();
+        //pausePanel.GetComponent<PauseMenuButtons>().CloseSettingsMenu();   |||This doesn't exist and causes an error. -B
         EventSystem.current.SetSelectedGameObject(null);
         
 
