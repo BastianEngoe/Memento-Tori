@@ -24,27 +24,27 @@ public class EventManager : MonoBehaviour
     {
         //Debug.Log("Received event type " + eventType);
 
-        if (UIManager.instance.curRoom == UIManager.Rooms.INTRO)
+        if (DialogueManager.instance.curRoom == DialogueManager.Rooms.INTRO)
         {
             introEvents[index].Invoke();
         }
         
-        if (UIManager.instance.curRoom == UIManager.Rooms.FARM)
+        if (DialogueManager.instance.curRoom == DialogueManager.Rooms.FARM)
         {
             farmEvents[index].Invoke();
         }
         
-        if (UIManager.instance.curRoom == UIManager.Rooms.RACE)
+        if (DialogueManager.instance.curRoom == DialogueManager.Rooms.RACE)
         {
             raceEvents[index].Invoke();
         }
         
-        if (UIManager.instance.curRoom == UIManager.Rooms.BLOCK)
+        if (DialogueManager.instance.curRoom == DialogueManager.Rooms.BLOCK)
         {
             blockEvents[index].Invoke();
         }
         
-        if (UIManager.instance.curRoom == UIManager.Rooms.SHOOTER)
+        if (DialogueManager.instance.curRoom == DialogueManager.Rooms.SHOOTER)
         {
             shooterEvents[index].Invoke();
         }
