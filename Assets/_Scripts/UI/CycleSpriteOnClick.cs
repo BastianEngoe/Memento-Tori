@@ -5,8 +5,8 @@ using UnityEngine.EventSystems;
 public class CycleSpriteOnClick : MonoBehaviour
 {
     private Button button; // Reference to the Button component
-    public Sprite[] sourceImage, highlightedSprite, pressedSprite; // Array of sprites to cycle through
-    private int currentIndex = 0; // Index of the current sprite being displayed
+    public Sprite[] highlightedSprite, pressedSprite; // Array of sprites to cycle through
+     public int currentIndex; // Index of the current sprite being displayed
 
     
     void Start()
@@ -28,16 +28,13 @@ public class CycleSpriteOnClick : MonoBehaviour
         currentIndex++;
 
         // Check if we reached the end of the array
-        if (currentIndex >= sourceImage.Length)
+        if (currentIndex >= highlightedSprite.Length)
         {
             currentIndex = 0; // Reset to the first sprite
         }
-
+        
         // Display the sprite at the current index for each state of the button
-        button.image.sprite = sourceImage[currentIndex];
-        
-        
-        Debug.Log(button.spriteState.highlightedSprite);
+        GetComponent<Image>().sprite = pressedSprite[currentIndex];
         
         SpriteState spriteState = new SpriteState();
         spriteState.highlightedSprite = highlightedSprite[currentIndex];
@@ -45,5 +42,10 @@ public class CycleSpriteOnClick : MonoBehaviour
         button.spriteState = spriteState;
         
         EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    public void InitialCycleOnPlayerPrefCheck()
+    {
+        Invoke("CycleToNextSprite", 0.1f);
     }
 }

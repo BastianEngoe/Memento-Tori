@@ -9,6 +9,7 @@ public class Brightness : MonoBehaviour
 {
     [SerializeField] private Slider brightnessSlider;
     private Volume _volume;
+    [HideInInspector] public float brightnessValue; //Only for showing in the inspector
     
     void Start()
     {
@@ -19,6 +20,7 @@ public class Brightness : MonoBehaviour
         }
 
         AdjustBrightness(brightnessSlider.value);
+        brightnessValue = brightnessSlider.value;
     }
 
     public void AdjustBrightness(float value)
@@ -26,6 +28,7 @@ public class Brightness : MonoBehaviour
         if (_volume && _volume.profile.TryGet(out ColorAdjustments colorAdjustments))
         {
             colorAdjustments.postExposure.value = value;
+            brightnessValue = value;
         }
     }
 }

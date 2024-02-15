@@ -28,6 +28,8 @@ public class QuickSpriteSwap : MonoBehaviour
     
     void Update()
     {
+        if (PlayerPrefs.GetInt("ScreenEffects") == 0) return; // If screen effects are disabled, stop the script
+            
         // Increment the timer
         timer += Time.unscaledDeltaTime;
 

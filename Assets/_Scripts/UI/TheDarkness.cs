@@ -1,9 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
@@ -11,7 +7,7 @@ public class TheDarkness : MonoBehaviour
 {
     [SerializeField] private AudioClip bulbClip;
     [SerializeField] private TMP_Text dialogue;
-    [SerializeField] private DialogueBankScriptableObject dialogueBank;
+    [SerializeField] private BasicDialogueBankScriptableObject dialogueBank;
     private float elapsedTime;
     private int lineIndex, eventIndex, fadeOutCounter;
 
@@ -23,36 +19,34 @@ public class TheDarkness : MonoBehaviour
 
     private void Update()
     {
-        
-
         if (GetComponent<CanvasGroup>().alpha >= 0.99f)
         {
             elapsedTime += Time.unscaledDeltaTime;
             
-            if (lineIndex == dialogueBank.introLines.Count)
+            if (lineIndex == dialogueBank.darknessLines.Count)
             {
                 return;
             }
         
-            if (dialogueBank.introLines[lineIndex].duration == 0)
+            if (dialogueBank.darknessLines[lineIndex].duration == 0)
             {
-                dialogueBank.introLines[lineIndex].duration = 3f;
+                dialogueBank.darknessLines[lineIndex].duration = 3f;
             }
 
-            if (elapsedTime >= dialogueBank.introLines[lineIndex].duration)
+            if (elapsedTime >= dialogueBank.darknessLines[lineIndex].duration)
             {
-                if (!dialogueBank.introLines[lineIndex].condition)
+                if (!dialogueBank.darknessLines[lineIndex].condition)
                 {
                     return;
                 }
-                NextLine(dialogueBank.introLines[lineIndex]);
+                NextLine(dialogueBank.darknessLines[lineIndex]);
                 lineIndex++;
                 elapsedTime = 0f;
             }
         }
     }
     
-    void NextLine(DialogueBankScriptableObject.DialogueLine lineType)
+    void NextLine(BasicDialogueBankScriptableObject.DialogueLine lineType)
     {
         dialogue.text = lineType.dialogue;
         // if (lineType.voiceline)

@@ -1,11 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.Audio;
 
 public class PauseMenuButtons : MonoBehaviour
@@ -20,11 +15,10 @@ public class PauseMenuButtons : MonoBehaviour
     private Volume _volume; // URP Volume
 
     #region ToggleSFX variables
-    [SerializeField] private AudioMixer audioMixer; // Reference to the AudioMixer
+    [HideInInspector] public AudioMixer audioMixer; // Reference to the AudioMixer
     private bool SFXisMuted, MusicisMuted; // Flag to track mute state of audio mixer groups
     private float savedSFXVolume, savedMusicVolume;
     #endregion
-    
 
     
     
@@ -36,14 +30,13 @@ public class PauseMenuButtons : MonoBehaviour
         scale2 = new Vector2(1.05f,1.05f);
         
         
-        if (name == "SFX_Button" | name == "Music_Button") // Ensure that the audioMixer reference is set
+        if (name.Contains("Music") | name.Contains("SFX")) // Ensure that the audioMixer reference is set
         {
             if (audioMixer == null)
             {
-                Debug.LogError("AudioMixer reference is not set in ToggleSFX script on GameObject " + gameObject.name);
+                Debug.LogError("AudioMixer reference is not set in this GameObject " + gameObject.name);
             }
         }
-        
     }
 
     
@@ -164,17 +157,4 @@ public class PauseMenuButtons : MonoBehaviour
         audioMixer.SetFloat("SFXVolume", volume); // Set the volume parameter of the Mixer group
     }
     
-    public void ToggleMusic()
-    {
-        if (!MusicisMuted)
-        {
-            audioMixer.GetFloat("MusicVolume", out savedMusicVolume); // Save the volume before muting, so unmuting goes back to it
-        }
-        
-        MusicisMuted = !MusicisMuted; // Toggle the mute state
-        
-        // Set the volume of the Mixer group based on the mute state
-        float volume = MusicisMuted ? -80f : savedMusicVolume; // Mute volume is typically set to -80dB
-        audioMixer.SetFloat("MusicVolume", volume); // Set the volume parameter of the Mixer group
-    }
 }
