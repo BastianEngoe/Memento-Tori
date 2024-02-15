@@ -1579,6 +1579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitleText: {fileID: 0}
   subtitleSizeSlider: {fileID: 6800625645691723472}
+  subtitlesToggleButton: {fileID: 0}
 --- !u!1 &3705606816085458751
 GameObject:
   m_ObjectHideFlags: 0
@@ -3430,7 +3431,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &873449886317528327
 MonoBehaviour:
   m_ObjectHideFlags: 0
