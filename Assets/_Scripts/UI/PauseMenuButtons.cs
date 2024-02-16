@@ -89,6 +89,7 @@ public class PauseMenuButtons : MonoBehaviour
         
         settingsPanel.GetComponent<Animator>().SetTrigger("OpenSettings");
 
+        Cursor.visible = true;
     }
 
     public void CloseSettingsMenu()

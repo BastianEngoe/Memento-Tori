@@ -70,8 +70,10 @@ public class UIManager : MonoBehaviour
                 Cursor.visible = false;
                 break;
             case CursorLockMode.Confined:
+                Cursor.visible = true;
                 break;
             default:
+                Cursor.visible = true;
                 throw new ArgumentOutOfRangeException();
         }
             
@@ -83,14 +85,6 @@ public class UIManager : MonoBehaviour
         //pausePanel.GetComponent<PauseMenuButtons>().CloseSettingsMenu();   |||This doesn't exist and causes an error. -B
         EventSystem.current.SetSelectedGameObject(null);
         
-
-        if (pause)
-        {
-            beforePauseLockMode = Cursor.lockState; //Remembers what the cursor mode was before pausing
-        }
-
-        Cursor.lockState = pause ? CursorLockMode.None : beforePauseLockMode;
-
         centerUIDot.GetComponent<CanvasGroup>().alpha = pause ? 0 : 1;
         
     }
