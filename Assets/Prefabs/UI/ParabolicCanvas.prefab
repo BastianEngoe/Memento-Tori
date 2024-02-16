@@ -281,7 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.003921569}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -801,7 +801,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.83145314, y: 0.8183753}
   m_AnchorMax: {x: 0.9609472, y: 0.9616441}
-  m_AnchoredPosition: {x: -0.00012207031, y: 0.000061035156}
+  m_AnchoredPosition: {x: -0.00012207031, y: 0.00024414062}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6527815793849325793
@@ -944,21 +944,21 @@ RectTransform:
   m_Children:
   - {fileID: 8389062373079090790}
   - {fileID: 1070796182963645601}
+  - {fileID: 6645475886356967611}
+  - {fileID: 7457936217913632415}
+  - {fileID: 234255772318282678}
+  - {fileID: 8737888849731265361}
+  - {fileID: 8312403965863536387}
   - {fileID: 3354403011760107097}
   - {fileID: 6508503989576569134}
   - {fileID: 55545024971552652}
   - {fileID: 8885717266898850178}
   - {fileID: 4707629970950415422}
-  - {fileID: 234255772318282678}
-  - {fileID: 8737888849731265361}
-  - {fileID: 8312403965863536387}
-  - {fileID: 7457936217913632415}
-  - {fileID: 6645475886356967611}
-  - {fileID: 8935116134286795026}
   - {fileID: 6644443842851555116}
   - {fileID: 6826586523484562856}
   - {fileID: 904780197085927516}
   - {fileID: 6584247628456000571}
+  - {fileID: 8935116134286795026}
   - {fileID: 1029790852720941029}
   m_Father: {fileID: 8399278822517733422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1824,9 +1824,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6728193283006729819}
-        m_TargetAssemblyTypeName: ScreenEffects, Assembly-CSharp
-        m_MethodName: ToggleScreenFX
+      - m_Target: {fileID: 993761326237781524}
+        m_TargetAssemblyTypeName: CycleSpriteOnClick, Assembly-CSharp
+        m_MethodName: CycleToNextSprite
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1836,9 +1836,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 993761326237781524}
-        m_TargetAssemblyTypeName: CycleSpriteOnClick, Assembly-CSharp
-        m_MethodName: CycleToNextSprite
+      - m_Target: {fileID: 6728193283006729819}
+        m_TargetAssemblyTypeName: ScreenEffects, Assembly-CSharp
+        m_MethodName: ToggleScreenFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2262,7 +2262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2333,7 +2333,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 81.78262, y: 356.32672, z: 71.49591, w: 351.7827}
+  m_margin: {x: 400, y: 0, z: 400, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3431,7 +3431,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &873449886317528327
 MonoBehaviour:
   m_ObjectHideFlags: 0
