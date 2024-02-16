@@ -6,7 +6,7 @@ using System.Linq;
 /// <summary>
 /// TO (potentially) DO:
 ///
-/// Item outline on potentialPickups[0].
+/// Cry about it.
 /// </summary>
 
 public class HeldItem : MonoBehaviour
@@ -48,8 +48,8 @@ public class HeldItem : MonoBehaviour
         
             //Assign found item as currently held item.
             heldItem = item;
-        
-            if (heldItem.GetComponent<MeshRenderer>().materials.Length == 2)
+
+            if(heldItem.TryGetComponent(out MeshRenderer mRend))
             {
                 matArray2 = matArray.ToList();
             
@@ -57,7 +57,7 @@ public class HeldItem : MonoBehaviour
 
                 matArray = matArray2.ToArray();
 
-                heldItem.GetComponent<MeshRenderer>().materials = matArray;
+                mRend.materials = matArray;
             }
 
             //Move the item in place, re-enable movement and set items transform parent.
@@ -98,10 +98,8 @@ public class HeldItem : MonoBehaviour
 
             heldItem = item;
             
-            //Disable movement while picking up.
-            GameManager.instance.ToggleMovement(false);
 
-            if (heldItem.GetComponent<MeshRenderer>().materials.Length == 2)
+            if(heldItem.TryGetComponent(out MeshRenderer mRend))
             {
                 matArray2 = matArray.ToList();
             
@@ -109,15 +107,9 @@ public class HeldItem : MonoBehaviour
 
                 matArray = matArray2.ToArray();
 
-                heldItem.GetComponent<MeshRenderer>().materials = matArray;
+                mRend.materials = matArray;
             }
-
-            //Move the item in place, re-enable movement and set items transform parent.
-            heldItem.transform.DOMove(transform.position, 0.75f).OnComplete
-                (() => GameManager.instance.ToggleMovement(true));
-            heldItem.transform.DORotate(transform.rotation.eulerAngles, 0.5f);
-            heldItem.transform.parent = transform;
-        
+            
             //If item has a Collider and/or Rigidbody, disable them while held.
             if(heldItem.TryGetComponent(out Rigidbody itemRB))
             {
@@ -140,7 +132,7 @@ public class HeldItem : MonoBehaviour
                         {
                             PlayerLogic.instance.inventory[j] = items.ItemDatabase[i];
                             potentialPickups.Remove(potentialPickups[0]);
-                            Destroy(heldItem, 0.77f);
+                            Destroy(heldItem, 0.1f);
                             HoldInventoryItem(PlayerLogic.instance.inventory[PlayerLogic.instance.itemIndex].model);
                             return;
                         }
@@ -168,6 +160,27 @@ public class HeldItem : MonoBehaviour
         heldItem = null;
         holdingItem = false;
     }
+
+    public void DropInventoryItem()
+    {
+        //If item has Collider and Rigidbody, re-enable them.
+        if(inventoryItem.TryGetComponent(out Rigidbody invItemRB))
+        {
+            invItemRB.useGravity = true;
+        }
+
+        if (inventoryItem.TryGetComponent(out Collider invItemCollider))
+        {
+            invItemCollider.enabled = true;
+        }
+        
+        //Reset variables.    
+        inventoryItem.name = PlayerLogic.instance.inventory[PlayerLogic.instance.itemIndex].name;
+        inventoryItem.transform.parent = null;
+        inventoryItem = null;
+        PlayerLogic.instance.inventory[PlayerLogic.instance.itemIndex] = PlayerLogic.instance.empty;
+        holdingItem = false;
+    }
     
     private void OnTriggerEnter(Collider other)
     {
@@ -176,28 +189,56 @@ public class HeldItem : MonoBehaviour
         {
             potentialPickups.Add(other.gameObject);
 
-            matArray = potentialPickups[0].GetComponent<MeshRenderer>().materials;
-
-            matArray2 = matArray.ToList();
-            
-            if (matArray2.Count == 1)
+            if (other.TryGetComponent<MeshRenderer>(out MeshRenderer mRend))
             {
-                matArray2.Add(outlineShader);
+                matArray = mRend.materials;
 
-                matArray = matArray2.ToArray();
+                matArray2 = matArray.ToList();
+        
+                if (matArray2.Count == 1)
+                {
+                    matArray2.Add(outlineShader);
 
-                potentialPickups[0].GetComponent<MeshRenderer>().materials = matArray;
+                    matArray = matArray2.ToArray();
+
+                    mRend.materials = matArray;
+                }
             }
-
-            potentialPickups[0].GetComponent<MeshRenderer>().materials = matArray;
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        //If far away from potential item to pickup, remove it as a pickup target.
+        if (other.CompareTag("PickUp"))
+        {
+            if (other.TryGetComponent<MeshRenderer>(out MeshRenderer mRend))
+            {
+                matArray = mRend.materials;
+                
+                matArray2 = matArray.ToList();
+            
+                if (matArray2.Count == 2)
+                {
+                    matArray2.Remove(matArray2[1]);
+
+                    matArray = matArray2.ToArray();
+
+                    mRend.materials = matArray;
+                }
+            }
+            potentialPickups.Remove(other.gameObject);
+        }
+    }
+    
     public void HoldInventoryItem(GameObject item)
     {
         if (heldItem != item)
         {
-            Destroy(inventoryItem);
+            if (inventoryItem)
+            {
+                Destroy(inventoryItem);
+            }
             heldItem = item;
             inventoryItem = Instantiate(heldItem, transform);
         }
@@ -207,42 +248,42 @@ public class HeldItem : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        //If far away from potential item to pickup, remove it as a pickup target.
-        if (other.CompareTag("PickUp"))
-        {
-            matArray = potentialPickups[0].GetComponent<MeshRenderer>().materials;
-
-            matArray2 = matArray.ToList();
-
-            if (matArray2.Count == 2)
-            {
-                matArray2.Remove(matArray2[1]);
-
-                matArray = matArray2.ToArray();
-
-                potentialPickups[0].GetComponent<MeshRenderer>().materials = matArray;
-            }
-            
-            potentialPickups.Remove(other.gameObject);
-        }
-    }
-    
     private void Update()
     {
-        //Pick up the potential pick up target.
-        if (Input.GetKeyUp(KeyCode.E))
+        if (GameManager.instance.curRoom == GameManager.Rooms.INTRO)
         {
-            if(potentialPickups.Count >= 1) {PickupItem(potentialPickups[0]);}
-        }
-        
-        //Drop currently held item.
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (holdingItem)
+            //Pick up the potential pick up target.
+            if (Input.GetKeyUp(KeyCode.E))
             {
-                DropItem();
+                if(potentialPickups.Count >= 1) {PickupItem(potentialPickups[0]);}
+            }
+        
+            //Drop currently held item.
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (holdingItem)
+                {
+                    DropItem();
+                }
+            }
+        }
+
+        if (GameManager.instance.curRoom == GameManager.Rooms.FARM)
+        {
+            //Pick up the potential pick up target.
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                if(potentialPickups.Count >= 1) {PickupItem(potentialPickups[0]);}
+            }
+        
+            //Drop currently held item.
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (inventoryItem != null)
+                {
+                    Debug.Log("hellooo");
+                    DropInventoryItem();
+                }
             }
         }
     }

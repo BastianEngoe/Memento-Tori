@@ -17,6 +17,7 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private List<GameObject> inventoryUI;
     [SerializeField] private GameObject inventoryUISelection;
     public int itemIndex;
+    [HideInInspector] public Item empty;
 
     private void Awake()
     {
@@ -114,8 +115,10 @@ public class PlayerLogic : MonoBehaviour
 
         if (HeldItem.instance.inventoryItem != null && Input.GetMouseButtonUp(0))
         {
-            HeldItem.instance.transform.DORotate(new Vector3(30,0,0),0.5f, RotateMode.LocalAxisAdd).OnComplete(() => 
-                HeldItem.instance.transform.DORotate(new Vector3(-30,0,0), 0.5f, RotateMode.LocalAxisAdd));
+            HeldItem.instance.GetComponent<Animator>().SetTrigger("Use");
+            AudioSource hItemSource = HeldItem.instance.GetComponent<AudioSource>();
+            hItemSource.clip = inventory[itemIndex].soundEffect;
+            hItemSource.Play();
         }
     }
 

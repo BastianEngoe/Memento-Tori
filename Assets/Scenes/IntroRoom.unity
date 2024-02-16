@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8bd0835a36ada4d929f855b561326e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curRoom: 1
+  curRoom: 0
   player: {fileID: 0}
   isNodding: 0
   isShaking: 0
@@ -839,7 +839,7 @@ GameObject:
   - component: {fileID: 681659556}
   - component: {fileID: 681659555}
   m_Layer: 0
-  m_Name: Seeds
+  m_Name: Cube 2
   m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1153,7 +1153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &965717807
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1488,7 +1488,7 @@ GameObject:
   - component: {fileID: 1205299729}
   - component: {fileID: 1205299733}
   m_Layer: 0
-  m_Name: Hoe
+  m_Name: Cube
   m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1638,21 +1638,27 @@ MonoBehaviour:
   - name: 
     icon: {fileID: 0}
     soundEffect: {fileID: 0}
+    model: {fileID: 0}
   - name: 
     icon: {fileID: 0}
     soundEffect: {fileID: 0}
+    model: {fileID: 0}
   - name: 
     icon: {fileID: 0}
     soundEffect: {fileID: 0}
+    model: {fileID: 0}
   - name: 
     icon: {fileID: 0}
     soundEffect: {fileID: 0}
+    model: {fileID: 0}
   - name: 
     icon: {fileID: 0}
     soundEffect: {fileID: 0}
+    model: {fileID: 0}
   - name: 
     icon: {fileID: 0}
     soundEffect: {fileID: 0}
+    model: {fileID: 0}
   inventoryUI:
   - {fileID: 376839094}
   - {fileID: 143791153}
@@ -1662,6 +1668,11 @@ MonoBehaviour:
   - {fileID: 976859357}
   inventoryUISelection: {fileID: 923479310}
   itemIndex: 0
+  empty:
+    name: 
+    icon: {fileID: 0}
+    soundEffect: {fileID: 0}
+    model: {fileID: 0}
 --- !u!43 &1346964234
 Mesh:
   m_ObjectHideFlags: 0
@@ -2443,6 +2454,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780292596475190607, guid: d21185c80ca8eff4f89fd8b2a9996362,
+        type: 3}
+      propertyPath: field of view
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 4460715268729475511, guid: d21185c80ca8eff4f89fd8b2a9996362,
         type: 3}
