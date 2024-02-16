@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -42,7 +44,7 @@ public class UIManager : MonoBehaviour
         
         ShowOrHidePauseMenu(false);
         
-        if (GameManager.instance.curRoom == GameManager.Rooms.INTRO)
+        if (SceneManager.GetActiveScene().name != "Bootscreen")
         { 
             centerUIDot.GetComponent<CanvasGroup>().alpha = 1;
             Cursor.lockState = CursorLockMode.Locked;
