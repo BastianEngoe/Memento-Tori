@@ -18,6 +18,8 @@ public class HeldItem : MonoBehaviour
     public List<GameObject> potentialPickups;
     public bool canPickup = true;
 
+    [SerializeField] private ItemDatabaseScriptableObject items;
+
     [SerializeField] private Material outlineShader;
     [SerializeField] private Material[] matArray;
     [SerializeField] private List<Material> matArray2;
@@ -29,7 +31,6 @@ public class HeldItem : MonoBehaviour
 
     public void PickupItem(GameObject item)
     {
-        
         if(!canPickup)  return;
         
         //If already holding an item, drop it first.
@@ -82,6 +83,25 @@ public class HeldItem : MonoBehaviour
             if (heldItem == potentialPickups[i])
             {
                 potentialPickups.Remove(potentialPickups[i]);
+            }
+        }
+
+        if (GameManager.instance.curRoom == GameManager.Rooms.FARM)
+        {
+            for (int i = 0; i < items.ItemDatabase.Count; i++)
+            {
+                if (item.name == items.ItemDatabase[i].name)
+                {
+                    for (int j = 0; j < PlayerLogic.instance.inventory.Count; j++)
+                    {
+                        if (PlayerLogic.instance.inventory[j].name == string.Empty)
+                        {
+                            PlayerLogic.instance.inventory[j] = items.ItemDatabase[i];
+                            Destroy(item, 1f);
+                            return;
+                        }
+                    }
+                }
             }
         }
     }

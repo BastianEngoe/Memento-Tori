@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     private FirstPersonController playerFPSController;
 
     private bool canPause, isPaused;
-    private bool isNodding, isShaking;
+    [HideInInspector] public bool isNodding, isShaking;
 
 	[Header("Dialogue audio source")]
     public AudioSource mascotSpeaker;
