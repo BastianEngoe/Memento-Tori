@@ -6,19 +6,7 @@ using UnityEngine;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
-    
-    public enum Rooms
-    {
-        INTRO,
-        FARM,
-        RACE,
-        BLOCK,
-        SHOOTER
-    }
-    
-    [Header("Room state")]
-    public Rooms curRoom;
-    
+
     [Header("Dialogue asset")]
     [SerializeField] private DialogueBankScriptableObject dialogueBank;
     [SerializeField] private float elapsedTime;
@@ -37,23 +25,23 @@ public class DialogueManager : MonoBehaviour
     {
         lineIndex = 0;
         
-        if (curRoom == Rooms.INTRO)
+        if (GameManager.instance.curRoom == GameManager.Rooms.INTRO)
         {
             NextLine(dialogueBank.introLines[lineIndex]);
         }
-        if (curRoom == Rooms.FARM)
+        if (GameManager.instance.curRoom == GameManager.Rooms.FARM)
         {
             NextLine(dialogueBank.farmLines[lineIndex]);
         }
-        if (curRoom == Rooms.RACE)
+        if (GameManager.instance.curRoom == GameManager.Rooms.RACE)
         {
             NextLine(dialogueBank.raceLines[lineIndex]);
         }
-        if (curRoom == Rooms.BLOCK)
+        if (GameManager.instance.curRoom == GameManager.Rooms.BLOCK)
         {
             NextLine(dialogueBank.blockLines[lineIndex]);
         }
-        if (curRoom == Rooms.SHOOTER)
+        if (GameManager.instance.curRoom == GameManager.Rooms.SHOOTER)
         {
             NextLine(dialogueBank.shooterLines[lineIndex]);
         }
@@ -61,25 +49,25 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        switch (curRoom)
+        switch (GameManager.instance.curRoom)
         {
-            case Rooms.INTRO:
+            case GameManager.Rooms.INTRO:
                 UpdateIntroRoom();
                 break;
 
-            case Rooms.FARM:
+            case GameManager.Rooms.FARM:
                 UpdateFarmRoom();
                 break;
 
-            case Rooms.RACE:
+            case GameManager.Rooms.RACE:
                 UpdateRaceRoom();
                 break;
 
-            case Rooms.BLOCK:
+            case GameManager.Rooms.BLOCK:
                 UpdateBlockRoom();
                 break;
 
-            case Rooms.SHOOTER:
+            case GameManager.Rooms.SHOOTER:
                 UpdateShooterRoom();
                 break;
         }
@@ -127,23 +115,23 @@ public class DialogueManager : MonoBehaviour
 
             lineIndex++;
 
-            if (curRoom == Rooms.INTRO)
+            if (GameManager.instance.curRoom == GameManager.Rooms.INTRO)
             {
                 NextLine(dialogueBank.introLines[lineIndex]);
             }
-            if (curRoom == Rooms.FARM)
+            if (GameManager.instance.curRoom == GameManager.Rooms.FARM)
             {
                 NextLine(dialogueBank.farmLines[lineIndex]);
             }
-            if (curRoom == Rooms.RACE)
+            if (GameManager.instance.curRoom == GameManager.Rooms.RACE)
             {
                 NextLine(dialogueBank.raceLines[lineIndex]);
             }
-            if (curRoom == Rooms.BLOCK)
+            if (GameManager.instance.curRoom == GameManager.Rooms.BLOCK)
             {
                 NextLine(dialogueBank.blockLines[lineIndex]);
             }
-            if (curRoom == Rooms.SHOOTER)
+            if (GameManager.instance.curRoom == GameManager.Rooms.SHOOTER)
             {
                 NextLine(dialogueBank.shooterLines[lineIndex]);
             }
@@ -159,23 +147,23 @@ public class DialogueManager : MonoBehaviour
             performedCondition = true;
             checkingCondition = false;
             
-            if (curRoom == Rooms.INTRO)
+            if (GameManager.instance.curRoom == GameManager.Rooms.INTRO)
             {
                 NextLine(dialogueBank.introLines[lineIndex]);
             }
-            if (curRoom == Rooms.FARM)
+            if (GameManager.instance.curRoom == GameManager.Rooms.FARM)
             {
                 NextLine(dialogueBank.farmLines[lineIndex]);
             }
-            if (curRoom == Rooms.RACE)
+            if (GameManager.instance.curRoom == GameManager.Rooms.RACE)
             {
                 NextLine(dialogueBank.raceLines[lineIndex]);
             }
-            if (curRoom == Rooms.BLOCK)
+            if (GameManager.instance.curRoom == GameManager.Rooms.BLOCK)
             {
                 NextLine(dialogueBank.blockLines[lineIndex]);
             }
-            if (curRoom == Rooms.SHOOTER)
+            if (GameManager.instance.curRoom == GameManager.Rooms.SHOOTER)
             {
                 NextLine(dialogueBank.shooterLines[lineIndex]);
             }

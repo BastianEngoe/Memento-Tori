@@ -5,13 +5,26 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     
+    public enum Rooms
+    {
+        INTRO,
+        FARM,
+        RACE,
+        BLOCK,
+        SHOOTER
+    }
+    
+    [Header("Room state")]
+    public Rooms curRoom;
+    
     [HideInInspector] public GameObject player;
     private CharacterController playerCharController;
     private FirstPersonController playerFPSController;
 
     private bool canPause, isPaused;
-    public bool isNodding, isShaking;
+    private bool isNodding, isShaking;
 
+	[Header("Dialogue audio source")]
     public AudioSource mascotSpeaker;
 
     private void Awake()

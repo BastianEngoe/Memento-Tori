@@ -46,29 +46,32 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2023.2.5f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
     <Compile Include="Assets\_Scripts\Systems\HeadNodYesSensor.cs" />
     <Compile Include="Assets\_Scripts\UI\TheDarkness.cs" />
-    <Compile Include="Assets\_Scripts\UI\BootscreenDialogue.cs" />
-    <Compile Include="Assets\_Scripts\Settings\SFXLevel.cs" />
+    <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
     <Compile Include="Assets\_Scripts\Systems\GameManager.cs" />
-    <Compile Include="Assets\_Scripts\Settings\ScreenEffects.cs" />
     <Compile Include="Assets\_Scripts\Systems\EventManager.cs" />
-    <Compile Include="Assets\_Scripts\Settings\MusicLevel.cs" />
-    <Compile Include="Assets\_Scripts\Settings\SubtitleSize.cs" />
+    <Compile Include="Assets\_Scripts\PostProcessing\Brightness.cs" />
+    <Compile Include="Assets\StarterAssets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
+    <Compile Include="Assets\StarterAssets\FirstPersonController\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\_Scripts\UI\PauseMenuButtons.cs" />
-    <Compile Include="Assets\_Scripts\Systems\BasicDialogueBankScriptableObject.cs" />
-    <Compile Include="Assets\_Scripts\Settings\Brightness.cs" />
+    <Compile Include="Assets\StarterAssets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
     <Compile Include="Assets\Input\PlayerInputActions.cs" />
     <Compile Include="Assets\_Scripts\Systems\DialogueManager.cs" />
-    <Compile Include="Assets\_Scripts\UI\Misc\AedanTempChanges.cs" />
+    <Compile Include="Assets\StarterAssets\FirstPersonController\Scripts\BasicRigidBodyPush.cs" />
     <Compile Include="Assets\_Scripts\UI\CycleSpriteOnClick.cs" />
-    <Compile Include="Assets\_Scripts\UI\PauseMenu.cs" />
+    <Compile Include="Assets\_Scripts\UI\SettingsMenu.cs" />
     <Compile Include="Assets\_Scripts\Systems\HeldItem.cs" />
+    <Compile Include="Assets\StarterAssets\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
     <Compile Include="Assets\_Scripts\Systems\DialogueBankScriptableObject.cs" />
+    <Compile Include="Assets\_Scripts\UI\AedanTempChanges.cs" />
     <Compile Include="Assets\_Scripts\Systems\HeadShakeNoSensor.cs" />
     <Compile Include="Assets\_Scripts\UI\QuickSpriteSwap.cs" />
     <Compile Include="Assets\_Scripts\Systems\UIManager.cs" />
     <Compile Include="Assets\_Scripts\Systems\TriggerEvent.cs" />
+    <Compile Include="Assets\StarterAssets\InputSystem\StarterAssetsInputs.cs" />
     <None Include="Library\PackageCache\com.unity.probuilder@5.2.2\Content\Shader\ReferenceUnlit.shader" />
     <None Include="Library\PackageCache\com.unity.settings-manager@2.0.1\package.json" />
     <None Include="Assets\UI\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -119,6 +122,7 @@
     <None Include="Assets\UI\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.22\ValidationExceptions.json" />
     <None Include="Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\link.xml" />
+    <None Include="Assets\StarterAssets\license.txt" />
     <None Include="Assets\UI\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Library\PackageCache\com.unity.probuilder@5.2.2\Content\Shader\FacePicker.shader" />
     <None Include="Assets\UI\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
@@ -1071,10 +1075,6 @@
       <Project>{cbdf0213-3fc4-1cb7-6333-bee977abaa29}</Project>
       <Name>Unity.AI.Navigation.Editor.ConversionSystem</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Recorder.Editor.csproj">
-      <Project>{47277efe-0ed3-4197-042c-8c5a51844b0f}</Project>
-      <Name>Unity.Recorder.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.Burst.Editor.csproj">
       <Project>{51c24b99-c3aa-7f1a-37ad-6e4bb13899fb}</Project>
       <Name>Unity.Burst.Editor</Name>
@@ -1086,6 +1086,10 @@
     <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
       <Project>{a7931134-070a-5d23-931c-4a51cee7b9b1}</Project>
       <Name>Unity.VisualStudio.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Recorder.Editor.csproj">
+      <Project>{47277efe-0ed3-4197-042c-8c5a51844b0f}</Project>
+      <Name>Unity.Recorder.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
       <Project>{20e737b3-7db9-2104-d6b8-92e907794c7f}</Project>

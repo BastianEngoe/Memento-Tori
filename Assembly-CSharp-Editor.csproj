@@ -46,9 +46,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2023.2.5f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Editor\BrightnessEditor.cs" />
-    <Compile Include="Assets\Editor\PauseMenuButtonsEditor.cs" />
-    <Compile Include="Assets\Editor\ScreenFXEditor.cs" />
+    <Compile Include="Assets\StarterAssets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Localization\commontypes.ko.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Localization\workspaceserver.zh-Hant.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Localization\cm-help.en.txt" />
@@ -998,10 +996,6 @@
       <Project>{6a78db1d-a704-3e57-bb69-100127e8eb10}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
-      <Project>{090ec0bc-ba3f-1605-7a2c-e2678216ab82}</Project>
-      <Name>Assembly-CSharp-Editor-firstpass</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
       <Project>{009bdc9d-47c1-2a63-bc61-480bb40b969e}</Project>
       <Name>UnityEngine.TestRunner</Name>
@@ -1126,10 +1120,6 @@
       <Project>{cbdf0213-3fc4-1cb7-6333-bee977abaa29}</Project>
       <Name>Unity.AI.Navigation.Editor.ConversionSystem</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Recorder.Editor.csproj">
-      <Project>{47277efe-0ed3-4197-042c-8c5a51844b0f}</Project>
-      <Name>Unity.Recorder.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.Burst.Editor.csproj">
       <Project>{51c24b99-c3aa-7f1a-37ad-6e4bb13899fb}</Project>
       <Name>Unity.Burst.Editor</Name>
@@ -1141,6 +1131,10 @@
     <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
       <Project>{a7931134-070a-5d23-931c-4a51cee7b9b1}</Project>
       <Name>Unity.VisualStudio.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Recorder.Editor.csproj">
+      <Project>{47277efe-0ed3-4197-042c-8c5a51844b0f}</Project>
+      <Name>Unity.Recorder.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
       <Project>{20e737b3-7db9-2104-d6b8-92e907794c7f}</Project>
