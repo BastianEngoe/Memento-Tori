@@ -65,7 +65,7 @@ public class ScreenEffects : MonoBehaviour
             
         if (postProcessVolume.profile.TryGet(out Bloom bloom))
         {
-            bloom.intensity.value = screenEffectsEnabled ? 1 : 0;
+            bloom.intensity.value = screenEffectsEnabled ? 0.5f : 0;
         }
             
         if (postProcessVolume.profile.TryGet(out MotionBlur motionBlur))

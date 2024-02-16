@@ -64,7 +64,7 @@ MonoBehaviour:
     duration: 1
     triggerEvent: 0
     condition: 1
-  - dialogue: I guess that's what happens when you turn off brightness....
+  - dialogue: "I guess that's what happens when you turn off \u2600 brightness...."
     voiceline: {fileID: 0}
     duration: 2
     triggerEvent: 0

@@ -8,27 +8,39 @@ using UnityEngine.UI;
 public class Brightness : MonoBehaviour
 {
     [SerializeField] private Slider brightnessSlider;
-    private Volume _volume;
+    private Volume volumePostProcess;
     [HideInInspector] public float brightnessValue; //Only for showing in the inspector
     
     void Start()
     {
-        _volume = GameObject.Find("MainCamera").GetComponent<Volume>();
+        volumePostProcess = GameObject.Find("MainCamera").GetComponent<Volume>();
+        
         if (!brightnessSlider)
         {
             brightnessSlider = GameObject.Find("BrightnessSlider").GetComponent<Slider>();
         }
-
-        AdjustBrightness(brightnessSlider.value);
-        brightnessValue = brightnessSlider.value;
+        
+        if (!PlayerPrefs.HasKey("Brightness"))
+        {
+            PlayerPrefs.SetFloat("Brightness", 0);
+            brightnessValue = 0;
+            brightnessSlider.value = 0;
+        }
+        else
+        {
+            brightnessValue = PlayerPrefs.GetFloat("Brightness");
+            AdjustBrightness(brightnessValue);
+            brightnessSlider.value = brightnessValue;
+        }
     }
 
     public void AdjustBrightness(float value)
     {
-        if (_volume && _volume.profile.TryGet(out ColorAdjustments colorAdjustments))
+        if (volumePostProcess && volumePostProcess.profile.TryGet(out ColorAdjustments colorAdjustments))
         {
             colorAdjustments.postExposure.value = value;
             brightnessValue = value;
+            PlayerPrefs.SetFloat("Brightness", value);
         }
     }
 }
