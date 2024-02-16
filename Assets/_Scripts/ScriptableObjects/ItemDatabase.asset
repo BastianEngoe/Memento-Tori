@@ -30,6 +30,6 @@ MonoBehaviour:
     soundEffect: {fileID: 0}
     model: {fileID: 0}
   - name: Emily
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: f09164c70b7ef994884700897d8c70c6, type: 3}
     soundEffect: {fileID: 0}
-    model: {fileID: 0}
+    model: {fileID: 3952138939442617004, guid: 4b8557173902c624b8be9264d8aa1809, type: 3}
