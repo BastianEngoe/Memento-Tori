@@ -22,8 +22,9 @@ public class GameManager : MonoBehaviour
     private FirstPersonController playerFPSController;
 
     private bool canPause, isPaused;
-    public bool isNodding, isShaking;
+    private bool isNodding, isShaking;
 
+	[Header("Dialogue audio source")]
     public AudioSource mascotSpeaker;
 
     private void Awake()
@@ -39,7 +40,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-
         //Simple pause function
         if (canPause)
         {
