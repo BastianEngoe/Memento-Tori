@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,7 +61,7 @@ public class PlayerLogic : MonoBehaviour
     {
         inventory.Capacity = 6;
 
-        if (Input.mouseScrollDelta.y > 0.5f)
+        if (Input.mouseScrollDelta.y < -0.5f)
         {
             if (itemIndex == inventory.Count - 1)
             {
@@ -70,9 +71,19 @@ public class PlayerLogic : MonoBehaviour
             {
                 itemIndex++;
             }
+            
+            if (inventory[itemIndex].model != null)
+            {
+                HeldItem.instance.HoldInventoryItem(inventory[itemIndex].model);
+            }
+            else
+            {
+                Destroy(HeldItem.instance.inventoryItem);
+                HeldItem.instance.heldItem = null;
+            }
         }
 
-        if (Input.mouseScrollDelta.y < -0.5f)
+        if (Input.mouseScrollDelta.y > 0.5f)
         {
             if (itemIndex == 0)
             {
@@ -82,6 +93,16 @@ public class PlayerLogic : MonoBehaviour
             {
                 itemIndex--;
             }
+            
+            if (inventory[itemIndex].model != null)
+            {
+                HeldItem.instance.HoldInventoryItem(inventory[itemIndex].model);
+            }
+            else
+            {
+                Destroy(HeldItem.instance.inventoryItem);
+                HeldItem.instance.heldItem = null;
+            }
         }
 
         for (int i = 0; i < inventoryUI.Count; i++)
@@ -90,6 +111,12 @@ public class PlayerLogic : MonoBehaviour
         }
         
         inventoryUISelection.transform.position = inventoryUI[itemIndex].transform.position;
+
+        if (HeldItem.instance.inventoryItem != null && Input.GetMouseButtonUp(0))
+        {
+            HeldItem.instance.transform.DORotate(new Vector3(30,0,0),0.5f, RotateMode.LocalAxisAdd).OnComplete(() => 
+                HeldItem.instance.transform.DORotate(new Vector3(-30,0,0), 0.5f, RotateMode.LocalAxisAdd));
+        }
     }
 
     private void UpdateRaceLogic()

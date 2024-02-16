@@ -8,4 +8,5 @@ public class Item
     public string name;
     public Sprite icon;
     public AudioClip soundEffect;
+    public GameObject model;
 }
