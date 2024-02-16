@@ -3,7 +3,12 @@ guid: 5839e7eb1fd1caa4ab6af38a96052aff
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: watering_can
+    second: {fileID: 2100000, guid: 69bbd99c874e6694c8d77d55d2778082, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

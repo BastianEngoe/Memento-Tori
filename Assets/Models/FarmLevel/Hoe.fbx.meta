@@ -3,7 +3,22 @@ guid: f8eeb175e7d02ee409237d7f0d3140d0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hoe_handle
+    second: {fileID: 2100000, guid: ce2e64dbb064a8f41b122fd8ae2cf518, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hoe_metal
+    second: {fileID: 2100000, guid: 69bbd99c874e6694c8d77d55d2778082, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hoe_metalCollar
+    second: {fileID: 2100000, guid: 69bbd99c874e6694c8d77d55d2778082, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
