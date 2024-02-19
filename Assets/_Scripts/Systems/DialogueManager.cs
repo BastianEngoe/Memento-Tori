@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -24,6 +25,11 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         lineIndex = 0;
+        
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            return;
+        }
         
         if (GameManager.instance.curRoom == GameManager.Rooms.INTRO)
         {
@@ -49,6 +55,12 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
+        
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            return;
+        }
+            
         switch (GameManager.instance.curRoom)
         {
             case GameManager.Rooms.INTRO:

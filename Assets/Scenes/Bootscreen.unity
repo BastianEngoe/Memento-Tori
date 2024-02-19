@@ -149,7 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397fbcaf1268a144cb86a2097cd4091c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curRoom: 0
   dialogueBank: {fileID: 11400000, guid: c0e6913091af3b64d97b2e6dce59655f, type: 2}
   elapsedTime: 0
   lineIndex: 0
@@ -216,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d928febe821ec143a5b632aa9357527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 0}
+  dialogue: {fileID: 1688553500}
   pausePanel: {fileID: 0}
   centerUIDot: {fileID: 0}
 --- !u!4 &557160033
@@ -439,15 +438,15 @@ Canvas:
   m_GameObject: {fileID: 1022278916}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 618244160}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -600,8 +599,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Hi there.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 065b67e90adc4744ca9f4a8afa2a1021, type: 2}
+  m_sharedMaterial: {fileID: -6989005635194377762, guid: 065b67e90adc4744ca9f4a8afa2a1021,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

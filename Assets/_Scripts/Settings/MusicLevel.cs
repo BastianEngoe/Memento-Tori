@@ -11,11 +11,14 @@ public class MusicLevel : MonoBehaviour
     private bool MusicisMuted; // Flag to track mute state of audio mixer groups
     private float volumeBeforeMute;
     [SerializeField] private GameObject musicSlider, musicToggleButton;
+    private CycleSpriteOnClick cycleSpriteOnClick;
 
 
     private void Start()
     {
 
+        cycleSpriteOnClick = musicToggleButton.GetComponent<CycleSpriteOnClick>(); //Using a coroutine because game is paused
+        
         if (!musicSlider)
         {
             musicSlider = GameObject.Find("MusicSlider");
@@ -41,20 +44,20 @@ public class MusicLevel : MonoBehaviour
             // Get the saved volume from PlayerPrefs and set it to the audio mixer and the slider
             float volume = PlayerPrefs.GetFloat("MusicVolume");
             audioMixer.SetFloat("MusicVolume", volume);
-            musicSlider.GetComponent<Slider>().value = volume;
+            musicSlider.GetComponent<Slider>().value = volume + 30;
             
             if (volume <= -39f)
             {
                 MusicisMuted = true;
                 musicSlider.GetComponent<Slider>().interactable = false;
-                musicToggleButton.GetComponent<CycleSpriteOnClick>().InitialCycleOnPlayerPrefCheck();
+                cycleSpriteOnClick.StartCoroutine(cycleSpriteOnClick.ChangeToDisabledSprite());
             }
         }
         else
         {
             PlayerPrefs.SetFloat("MusicVolume", 0);
             audioMixer.SetFloat("MusicVolume", 0);
-            musicSlider.GetComponent<Slider>().value = 0;
+            musicSlider.GetComponent<Slider>().value = 0 + 30;
         }
         
         
@@ -81,7 +84,7 @@ public class MusicLevel : MonoBehaviour
     
     public void AdjustMusicLevel(float value)
     {
-        audioMixer.SetFloat("MusicVolume", value);
-        PlayerPrefs.SetFloat("MusicVolume", value);
+        audioMixer.SetFloat("MusicVolume", value - 30);
+        PlayerPrefs.SetFloat("MusicVolume", value - 30);
     }
 }

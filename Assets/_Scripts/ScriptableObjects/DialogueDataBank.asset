@@ -18,8 +18,12 @@ MonoBehaviour:
     duration: 1
     triggerEvent: 0
     condition: 1
-  - dialogue: "Oh, hold on, we\u2019re not quite ready yet. By we I mean me. Hi!
-      We\u2019ll be introduced in a second, just let me\u2026"
+  - dialogue: Oh, hold on, we're not <i>quite</i> ready yet. By we I mean me.
+    voiceline: {fileID: 8300000, guid: 723957092b33b374bbadeafb5af1815f, type: 3}
+    duration: 3.030204
+    triggerEvent: 0
+    condition: 1
+  - dialogue: "Hi! We\u2019ll be introduced in a second, just let me\u2026"
     voiceline: {fileID: 8300000, guid: 723957092b33b374bbadeafb5af1815f, type: 3}
     duration: 3.030204
     triggerEvent: 1
@@ -35,11 +39,11 @@ MonoBehaviour:
     duration: 3.030204
     triggerEvent: 1
     condition: 1
-  - dialogue: "Hello! Hi, hi, hello! It\u2019s me! My name is [name], and I\u2019m
+  - dialogue: "Hello! Hi, hi, hello! It\u2019s me! My name is Devy, and I\u2019m
       an aspiring game developer. Do you like video games?"
     voiceline: {fileID: 8300000, guid: 723957092b33b374bbadeafb5af1815f, type: 3}
     duration: 3.030204
-    triggerEvent: 1
+    triggerEvent: 0
     condition: 1
   farmLines:
   - dialogue: 

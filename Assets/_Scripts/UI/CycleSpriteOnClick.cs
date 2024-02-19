@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -43,9 +44,18 @@ public class CycleSpriteOnClick : MonoBehaviour
         
         EventSystem.current.SetSelectedGameObject(null);
     }
-
-    public void InitialCycleOnPlayerPrefCheck()
+    
+    public IEnumerator ChangeToEnabledSprite()
     {
-        Invoke("CycleToNextSprite", 0.1f);
+        yield return new WaitForSecondsRealtime(0.25f);
+        currentIndex = 1;
+        CycleToNextSprite();
+    }
+    
+    public IEnumerator ChangeToDisabledSprite()
+    {
+        yield return new WaitForSecondsRealtime(0.25f);
+        currentIndex = 0;
+        CycleToNextSprite();
     }
 }

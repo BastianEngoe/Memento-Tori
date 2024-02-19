@@ -76,6 +76,19 @@ public class GameManager : MonoBehaviour
             HeldItem.instance.canPickup = true;
         }
     }
+    
+    public void ToggleJump(bool canJump)
+    {
+        //Easy to use function to toggle all jumping, can be referenced from any script.
+        if (!canJump)
+        {
+            playerCharController.slopeLimit = 90.0f;
+        }
+        else
+        {
+            playerCharController.slopeLimit = 45.0f;
+        }
+    }
 
     public void RetrievePlayerInput(out int input)
     {

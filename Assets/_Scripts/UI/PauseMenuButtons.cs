@@ -37,6 +37,8 @@ public class PauseMenuButtons : MonoBehaviour
                 Debug.LogError("AudioMixer reference is not set in this GameObject " + gameObject.name);
             }
         }
+        
+        ResizeButtonSize();
     }
 
     
@@ -101,6 +103,8 @@ public class PauseMenuButtons : MonoBehaviour
         settingsPanel.GetComponent<Animator>().SetInteger("Direction",Random.Range(1,5));
         settingsPanel.GetComponent<Animator>().ResetTrigger("OpenSettings");
         
+        ResizeButtonSize();
+        
     }
 
     public void HoverButtonEnter()
@@ -156,6 +160,15 @@ public class PauseMenuButtons : MonoBehaviour
         // Set the volume of the Mixer group based on the mute state
         float volume = SFXisMuted ? -80f : savedSFXVolume; // Mute volume is typically set to -80dB
         audioMixer.SetFloat("SFXVolume", volume); // Set the volume parameter of the Mixer group
+    }
+
+    private void ResizeButtonSize()
+    {
+        if (!PlayerPrefs.HasKey("SubtitleSize"))
+        {
+           
+        }
+        
     }
     
 }
