@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8bd0835a36ada4d929f855b561326e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curRoom: 0
   player: {fileID: 0}
   isNodding: 0
   isShaking: 0
@@ -1369,6 +1370,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1780292596475190607, guid: d21185c80ca8eff4f89fd8b2a9996362,
+        type: 3}
+      propertyPath: field of view
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 4460715268729475511, guid: d21185c80ca8eff4f89fd8b2a9996362,
         type: 3}
       propertyPath: m_Name
@@ -1434,6 +1440,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066581901935571656, guid: a66a6ea52b95125409417f82b368c2ec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5231139200590809353, guid: a66a6ea52b95125409417f82b368c2ec,
         type: 3}
